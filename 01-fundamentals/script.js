@@ -22,19 +22,33 @@
 // data types
 
 
-let firstName = "reza";
-console.log(typeof firstName)
+// let firstName = "reza";
+// console.log(typeof firstName)
+
+// let age = 24;
+// console.log(typeof age);
+
+// let jsIsFun = true;
+// console.log(typeof jsIsFun);
+
+// let year;
+// console.log(typeof year);
+
+// year = 2000;
+// console.log(typeof year)
+
+// console.log(typeof null);
+
+
+
+// let , const , var
+
 
 let age = 24;
-console.log(typeof age);
+age=25;
 
-let jsIsFun = true;
-console.log(typeof jsIsFun);
+const birthYear = 2000;
+// birthYear=2001; -> error
 
-let year;
-console.log(typeof year);
-
-year = 2000;
-console.log(typeof year)
-
-console.log(typeof null);
+var firstName = "reza";
+firstName = "alireza";
