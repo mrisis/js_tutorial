@@ -212,24 +212,53 @@
 
 // falsy values : 0 , '' , unll , undefined , NaN
 
-console.log(Boolean(0));
-console.log(Boolean(''));
-console.log(Boolean('reza'));
-console.log(Boolean(undefined));
+// console.log(Boolean(0));
+// console.log(Boolean(''));
+// console.log(Boolean('reza'));
+// console.log(Boolean(undefined));
 
 
-const money = 0;
-if (money) {
-    console.log("don't spend it all")
+// const money = 0;
+// if (money) {
+//     console.log("don't spend it all")
+// } else {
+//     console.log("you should get a job")
+// }
+
+
+// let hight;
+// // hight = 0 -> id return undefined
+// if (hight) {
+//     console.log(" hight is defined")
+// } else {
+//     console.log("hight is UNDEFINED")
+// }
+
+
+// equality operators == vs ===
+
+
+const age = 18;
+if (age === 18) {
+    console.log('you just became adultd');
 } else {
-    console.log("you should get a job")
+    console.log('you are young man !!');
 }
 
+console.log(18==='18');
+console.log(18=="18");
 
-let hight;
-// hight = 0 -> id return undefined
-if (hight) {
-    console.log(" hight is defined")
-} else {
-    console.log("hight is UNDEFINED")
+const favourite = Number(prompt("what's your favourite number?"));
+
+if (favourite === 23) {
+    console.log('it is cool number');
+}else if(favourite === 20){
+    console.log('it is not bad number')
+}else{
+    console.log('what ???!!')
+
+}
+
+if (favourite !== 23) {
+    console.log('why not 23??')
 }
