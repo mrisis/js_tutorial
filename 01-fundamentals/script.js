@@ -104,17 +104,36 @@
 // answer codeing challenge 
 
 
-const massMark = 78;
-const hightMark = 1.69;
+// const massMark = 78;
+// const hightMark = 1.69;
 
-const massJohn = 95;
-const hightJohn = 1.76;
+// const massJohn = 95;
+// const hightJohn = 1.76;
 
-const BMIMark = massMark / hightMark ** 2;
-const BMIJohn = massJohn / (hightJohn * hightJohn);
+// const BMIMark = massMark / hightMark ** 2;
+// const BMIJohn = massJohn / (hightJohn * hightJohn);
 
 
-console.log(BMIJohn, BMIMark);
+// console.log(BMIJohn, BMIMark);
 
-const markHigherBMI = BMIMark > BMIJohn;
-console.log(markHigherBMI);
+// const markHigherBMI = BMIMark > BMIJohn;
+// console.log(markHigherBMI);
+
+
+// string and template literals
+
+
+const firstName = 'reza';
+const job = 'programmer';
+const birthDate = 2000;
+const year = 2024;
+
+const reza = `i'm ${firstName} , a ${year - birthDate} years old , ${job}!`
+console.log(reza);
+
+
+console.log(`string
+    multiple 
+    lines!!!`);
+
+console.log('string \n\ multiple \n\ lines !!!!');
