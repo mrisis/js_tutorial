@@ -168,11 +168,39 @@
 
 // coding challenge #2
 
-const BMIMark = 28.3;
-const BMIJohn = 23.9;
+// const BMIMark = 28.3;
+// const BMIJohn = 23.9;
 
-if (BMIMark > BMIJohn) {
-    console.log(`mark BMI ${BMIMark} is higher than john's ${BMIJohn}`)
-} else {
-    console.log(`BMI john ${BMIJohn} is higher than mark's ${BMIMark}`)
-}
+// if (BMIMark > BMIJohn) {
+//     console.log(`mark BMI ${BMIMark} is higher than john's ${BMIJohn}`)
+// } else {
+//     console.log(`BMI john ${BMIJohn} is higher than mark's ${BMIMark}`)
+// }
+
+
+// data converison
+
+const inputYear = '2000';
+console.log(Number(inputYear) + 18);
+
+console.log(String(24));
+
+console.log(Number('reza')); 
+
+
+// data coercion
+
+console.log('im ' + 24 + ' years old');
+
+console.log('1' + '2' + '8');
+
+console.log('18' - '5');
+
+console.log('18' / '2');
+console.log('18' * '2');
+console.log('18' ** '2');
+
+
+let n = '1' + 1;
+n = n -1;
+console.log(n);
