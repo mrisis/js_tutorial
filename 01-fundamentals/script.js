@@ -57,36 +57,45 @@
 
 // math operator
 
-const ageReza = 2025 - 2000;
-console.log(ageReza);
+// const ageReza = 2025 - 2000;
+// console.log(ageReza);
 
-console.log(ageReza * 2);
+// console.log(ageReza * 2);
 
-console.log(ageReza / 2);
+// console.log(ageReza / 2);
 
-console.log(2 ** 3);
+// console.log(2 ** 3);
 
 
-// assignment operators
+// // assignment operators
 
-let x = 5;
+// let x = 5;
 
-x += 2;
+// x += 2;
 
-x -= 1;
+// x -= 1;
 
-x *= 3;
+// x *= 3;
 
-x++;
+// x++;
 
-x --;
+// x --;
 
-console.log(x);
+// console.log(x);
 
 
 // comparison operators
 
-console.log(ageReza >= 18);
+// console.log(ageReza >= 18);
 
-const isFullAge = ageReza >= 18;
-console.log(isFullAge);
+// const isFullAge = ageReza >= 18;
+// console.log(isFullAge);
+
+
+// operator precedence
+
+console.log(25-10-5);
+
+
+const averageAge = (24 + 19) / 2;
+console.log(averageAge);
