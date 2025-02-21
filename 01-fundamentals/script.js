@@ -238,27 +238,53 @@
 // equality operators == vs ===
 
 
-const age = 18;
-if (age === 18) {
-    console.log('you just became adultd');
+// const age = 18;
+// if (age === 18) {
+//     console.log('you just became adultd');
+// } else {
+//     console.log('you are young man !!');
+// }
+
+// console.log(18==='18');
+// console.log(18=="18");
+
+// const favourite = Number(prompt("what's your favourite number?"));
+
+// if (favourite === 23) {
+//     console.log('it is cool number');
+// }else if(favourite === 20){
+//     console.log('it is not bad number')
+// }else{
+//     console.log('what ???!!')
+
+// }
+
+// if (favourite !== 23) {
+//     console.log('why not 23??')
+// }
+
+
+// logical operators
+
+const hasDriverLicence = true;
+const hasGoodVision = true;
+const isTired = false;
+
+console.log(hasDriverLicence && hasGoodVision);
+console.log(hasDriverLicence || hasGoodVision);
+
+// if (hasDriverLicence && hasGoodVision) {
+//     console.log('reza is able should drive')
+// } else {
+//     console.log('someone else should drive')
+// }
+
+if (hasDriverLicence && hasGoodVision && !isTired) {
+    console.log('reza is able should drive')
+    
 } else {
-    console.log('you are young man !!');
+    console.log('someone else should drive...')
+    
 }
 
-console.log(18==='18');
-console.log(18=="18");
-
-const favourite = Number(prompt("what's your favourite number?"));
-
-if (favourite === 23) {
-    console.log('it is cool number');
-}else if(favourite === 20){
-    console.log('it is not bad number')
-}else{
-    console.log('what ???!!')
-
-}
-
-if (favourite !== 23) {
-    console.log('why not 23??')
-}
+console.log(hasDriverLicence || hasGoodVision || isTired)
