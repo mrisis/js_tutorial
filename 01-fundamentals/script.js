@@ -141,26 +141,38 @@
 
 // if else statement
 
-const age = 2;
+// const age = 2;
 
-if (age >= 18) {
-    console.log('reza can start dirving licence.')
+// if (age >= 18) {
+//     console.log('reza can start dirving licence.')
     
+// } else {
+//     const yearsLeft = 18 - age;
+//     console.log(`reza is too young, wait another ${yearsLeft} years ...`)
+    
+// }
+
+
+// const birthYear = 2000;
+
+// let century;
+// if (birthYear >= 2000) {
+//     century = 21;
+    
+// } else {
+//     century = 20;
+// }
+
+// console.log(century)
+
+
+// coding challenge #2
+
+const BMIMark = 28.3;
+const BMIJohn = 23.9;
+
+if (BMIMark > BMIJohn) {
+    console.log(`mark BMI ${BMIMark} is higher than john's ${BMIJohn}`)
 } else {
-    const yearsLeft = 18 - age;
-    console.log(`reza is too young, wait another ${yearsLeft} years ...`)
-    
+    console.log(`BMI john ${BMIJohn} is higher than mark's ${BMIMark}`)
 }
-
-
-const birthYear = 2000;
-
-let century;
-if (birthYear >= 2000) {
-    century = 21;
-    
-} else {
-    century = 20;
-}
-
-console.log(century)
