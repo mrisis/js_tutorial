@@ -94,8 +94,27 @@
 
 // operator precedence
 
-console.log(25-10-5);
+// console.log(25-10-5);
 
 
-const averageAge = (24 + 19) / 2;
-console.log(averageAge);
+// const averageAge = (24 + 19) / 2;
+// console.log(averageAge);
+
+
+// answer codeing challenge 
+
+
+const massMark = 78;
+const hightMark = 1.69;
+
+const massJohn = 95;
+const hightJohn = 1.76;
+
+const BMIMark = massMark / hightMark ** 2;
+const BMIJohn = massJohn / (hightJohn * hightJohn);
+
+
+console.log(BMIJohn, BMIMark);
+
+const markHigherBMI = BMIMark > BMIJohn;
+console.log(markHigherBMI);
