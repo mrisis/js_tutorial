@@ -123,17 +123,44 @@
 // string and template literals
 
 
-const firstName = 'reza';
-const job = 'programmer';
-const birthDate = 2000;
-const year = 2024;
+// const firstName = 'reza';
+// const job = 'programmer';
+// const birthDate = 2000;
+// const year = 2024;
 
-const reza = `i'm ${firstName} , a ${year - birthDate} years old , ${job}!`
-console.log(reza);
+// const reza = `i'm ${firstName} , a ${year - birthDate} years old , ${job}!`
+// console.log(reza);
 
 
-console.log(`string
-    multiple 
-    lines!!!`);
+// console.log(`string
+//     multiple 
+//     lines!!!`);
 
-console.log('string \n\ multiple \n\ lines !!!!');
+// console.log('string \n\ multiple \n\ lines !!!!');
+
+
+// if else statement
+
+const age = 2;
+
+if (age >= 18) {
+    console.log('reza can start dirving licence.')
+    
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`reza is too young, wait another ${yearsLeft} years ...`)
+    
+}
+
+
+const birthYear = 2000;
+
+let century;
+if (birthYear >= 2000) {
+    century = 21;
+    
+} else {
+    century = 20;
+}
+
+console.log(century)
