@@ -180,27 +180,56 @@
 
 // data converison
 
-const inputYear = '2000';
-console.log(Number(inputYear) + 18);
+// const inputYear = '2000';
+// console.log(Number(inputYear) + 18);
 
-console.log(String(24));
+// console.log(String(24));
 
-console.log(Number('reza')); 
+// console.log(Number('reza')); 
 
 
 // data coercion
 
-console.log('im ' + 24 + ' years old');
+// console.log('im ' + 24 + ' years old');
 
-console.log('1' + '2' + '8');
+// console.log('1' + '2' + '8');
 
-console.log('18' - '5');
+// console.log('18' - '5');
 
-console.log('18' / '2');
-console.log('18' * '2');
-console.log('18' ** '2');
+// console.log('18' / '2');
+// console.log('18' * '2');
+// console.log('18' ** '2');
 
 
-let n = '1' + 1;
-n = n -1;
-console.log(n);
+// let n = '1' + 1;
+// n = n -1;
+// console.log(n);
+
+
+
+// truthy & falsy values
+
+
+// falsy values : 0 , '' , unll , undefined , NaN
+
+console.log(Boolean(0));
+console.log(Boolean(''));
+console.log(Boolean('reza'));
+console.log(Boolean(undefined));
+
+
+const money = 0;
+if (money) {
+    console.log("don't spend it all")
+} else {
+    console.log("you should get a job")
+}
+
+
+let hight;
+// hight = 0 -> id return undefined
+if (hight) {
+    console.log(" hight is defined")
+} else {
+    console.log("hight is UNDEFINED")
+}
