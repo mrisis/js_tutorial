@@ -59,17 +59,37 @@
 
 // arrow functions
 
-const calcAge3 = birthYear => 2024 - birthYear;
+// const calcAge3 = birthYear => 2024 - birthYear;
 
-const age3 = calcAge3(2000);
-console.log(age3);
+// const age3 = calcAge3(2000);
+// console.log(age3);
 
 
-const yearUntilRetirment = (birthYear,firstName) => {
-    const age = 2024 - birthYear;
-    const retirment = 65 - age;
-    return console.log(`${firstName} retiry ${retirment} years`)
+// const yearUntilRetirment = (birthYear,firstName) => {
+//     const age = 2024 - birthYear;
+//     const retirment = 65 - age;
+//     return console.log(`${firstName} retiry ${retirment} years`)
+// }
+
+// console.log(yearUntilRetirment(2000, 'reza'));
+// console.log(yearUntilRetirment(1980, 'ali'));
+
+
+
+
+// fuctions calling other functions
+
+function cutFruitPieces(friut){
+    return friut * 4;
 }
 
-console.log(yearUntilRetirment(2000, 'reza'));
-console.log(yearUntilRetirment(1980, 'ali'));
+
+function friutProcessor(apples, oranges){
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`
+    return juice;
+}
+
+
+console.log(friutProcessor(2,3));
