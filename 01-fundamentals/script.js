@@ -307,15 +307,38 @@
 
 ///// 
 
-const scoreDolphines = (97+112+101) / 3;
-const scoreKoalas = (109+95+123) / 3;
+// const scoreDolphines = (97+112+101) / 3;
+// const scoreKoalas = (109+95+123) / 3;
 
-if (scoreDolphines > scoreKoalas && scoreDolphines >= 100) {
-    console.log('dolphines wit the trophy');
-} else if(scoreKoalas > scoreDolphines && scoreKoalas>= 100) {
-    console.log(' koalas win the trophy')
-} else if(scoreDolphines === scoreKoalas && scoreDolphines>=100 && scoreKoalas>=100){
-    console.log('both win the trophy');
-} else{
-    console.log('no one win trophy');
+// if (scoreDolphines > scoreKoalas && scoreDolphines >= 100) {
+//     console.log('dolphines wit the trophy');
+// } else if(scoreKoalas > scoreDolphines && scoreKoalas>= 100) {
+//     console.log(' koalas win the trophy')
+// } else if(scoreDolphines === scoreKoalas && scoreDolphines>=100 && scoreKoalas>=100){
+//     console.log('both win the trophy');
+// } else{
+//     console.log('no one win trophy');
+// }
+
+
+
+
+// the switch case statement
+
+const day = 'monday';
+
+switch(day){
+    case 'monday':
+        console.log('plan1');
+        console.log('go to home');
+        break;
+    case 'tuesday':
+        console.log('go to gym');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('record videos');
+        break;
+    default:
+        console.log(' not a valid day!!!');
 }
