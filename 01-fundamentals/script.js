@@ -347,10 +347,19 @@
 
 // the conditional (ternery) operators
 
-const age = 24;
-age >= 18 ? console.log('i like a drink wine') : console.log('i like a drink water')
+// const age = 24;
+// age >= 18 ? console.log('i like a drink wine') : console.log('i like a drink water')
 
-const drink = age >= 18 ? 'wine' : 'water';
-console.log(drink);
+// const drink = age >= 18 ? 'wine' : 'water';
+// console.log(drink);
 
-console.log(`i like drink ${age >= 18 ? 'wine' : 'water'}`)
+// console.log(`i like drink ${age >= 18 ? 'wine' : 'water'}`)
+
+
+
+// coding challenge #4
+
+const bill = 275;
+const tip = bill <=300 && bill >= 50 ? bill * 0.15 : bill * 0.20;
+
+console.log(`the bill was ${bill} , the tip was ${tip} , and the total value ${bill + tip}`)
