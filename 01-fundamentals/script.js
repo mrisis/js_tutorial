@@ -325,20 +325,32 @@
 
 // the switch case statement
 
-const day = 'monday';
+// const day = 'monday';
 
-switch(day){
-    case 'monday':
-        console.log('plan1');
-        console.log('go to home');
-        break;
-    case 'tuesday':
-        console.log('go to gym');
-        break;
-    case 'wednesday':
-    case 'thursday':
-        console.log('record videos');
-        break;
-    default:
-        console.log(' not a valid day!!!');
-}
+// switch(day){
+//     case 'monday':
+//         console.log('plan1');
+//         console.log('go to home');
+//         break;
+//     case 'tuesday':
+//         console.log('go to gym');
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('record videos');
+//         break;
+//     default:
+//         console.log(' not a valid day!!!');
+// }
+
+
+
+// the conditional (ternery) operators
+
+const age = 24;
+age >= 18 ? console.log('i like a drink wine') : console.log('i like a drink water')
+
+const drink = age >= 18 ? 'wine' : 'water';
+console.log(drink);
+
+console.log(`i like drink ${age >= 18 ? 'wine' : 'water'}`)
