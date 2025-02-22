@@ -266,12 +266,12 @@
 
 // logical operators
 
-const hasDriverLicence = true;
-const hasGoodVision = true;
-const isTired = false;
+// const hasDriverLicence = true;
+// const hasGoodVision = true;
+// const isTired = false;
 
-console.log(hasDriverLicence && hasGoodVision);
-console.log(hasDriverLicence || hasGoodVision);
+// console.log(hasDriverLicence && hasGoodVision);
+// console.log(hasDriverLicence || hasGoodVision);
 
 // if (hasDriverLicence && hasGoodVision) {
 //     console.log('reza is able should drive')
@@ -279,12 +279,43 @@ console.log(hasDriverLicence || hasGoodVision);
 //     console.log('someone else should drive')
 // }
 
-if (hasDriverLicence && hasGoodVision && !isTired) {
-    console.log('reza is able should drive')
+// if (hasDriverLicence && hasGoodVision && !isTired) {
+//     console.log('reza is able should drive')
     
-} else {
-    console.log('someone else should drive...')
+// } else {
+//     console.log('someone else should drive...')
     
-}
+// }
 
-console.log(hasDriverLicence || hasGoodVision || isTired)
+// console.log(hasDriverLicence || hasGoodVision || isTired)
+
+
+
+// coding challenge #3
+
+// const scoreDolphines  = (96+108+89) / 3;
+// const scoreKoalas = (88+91+110) / 3;
+
+// if (scoreDolphines > scoreKoalas) {
+//     console.log('dolphins win the trophy')
+// } else if(scoreKoalas > scoreDolphines){
+//     console.log('koalas win the trophy')
+// } else if(scoreDolphines === scoreKoalas){
+//     console.log('both win the trophy')
+// }
+
+
+///// 
+
+const scoreDolphines = (97+112+101) / 3;
+const scoreKoalas = (109+95+123) / 3;
+
+if (scoreDolphines > scoreKoalas && scoreDolphines >= 100) {
+    console.log('dolphines wit the trophy');
+} else if(scoreKoalas > scoreDolphines && scoreKoalas>= 100) {
+    console.log(' koalas win the trophy')
+} else if(scoreDolphines === scoreKoalas && scoreDolphines>=100 && scoreKoalas>=100){
+    console.log('both win the trophy');
+} else{
+    console.log('no one win trophy');
+}
