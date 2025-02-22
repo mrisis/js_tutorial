@@ -79,17 +79,40 @@
 
 // fuctions calling other functions
 
-function cutFruitPieces(friut){
-    return friut * 4;
+// function cutFruitPieces(friut){
+//     return friut * 4;
+// }
+
+
+// function friutProcessor(apples, oranges){
+//     const applePieces = cutFruitPieces(apples);
+//     const orangePieces = cutFruitPieces(oranges);
+//     const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`
+//     return juice;
+// }
+
+
+// console.log(friutProcessor(2,3));
+
+
+
+
+// reviewing functions
+
+const calcAge=function (birthYear){
+    return 2024 - birthYear;
 }
 
+const yearUntilRetirment = function (birthYear, firstName){
+    const age = calcAge(birthYear);
+    const retirment = 65 - age;
 
-function friutProcessor(apples, oranges){
-    const applePieces = cutFruitPieces(apples);
-    const orangePieces = cutFruitPieces(oranges);
-    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`
-    return juice;
-}
+    if(retirment > 0){
+        return retirment;
+    }else{
+        return -1;
+    }
+};
 
-
-console.log(friutProcessor(2,3));
+console.log(yearUntilRetirment(2000, 'reza'));
+console.log(yearUntilRetirment(1920, 'alireza'));
