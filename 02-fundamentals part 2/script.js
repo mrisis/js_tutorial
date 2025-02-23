@@ -219,12 +219,50 @@
 
 // introduction to objects
 
+// const reza = {
+//     firstName:'reza',
+//     lastName:'amin',
+//     age: 2024 - 2000,
+//     job: 'programmer',
+//     friends: ['alireza', 'mamad'],
+// };
+
+// console.log(reza);
+
+
+
+
+// dot vs bracket
+
 const reza = {
     firstName:'reza',
     lastName:'amin',
     age: 2024 - 2000,
     job: 'programmer',
     friends: ['alireza', 'mamad'],
-}
+};
 
+console.log(reza.firstName);
+console.log(reza['firstName']);
+
+const nameKey = 'Name';
+console.log(reza['first' + nameKey]);
+console.log(reza['last' + nameKey]);
+
+// const question = prompt('what do you want know reza?');
+
+// if(reza[question]){
+//     console.log(reza[question]);
+// } else{
+//     console.log('value does not exist');
+// };
+
+
+reza.location ="Iran";
+reza['telegram'] = "@jalal_aref";
 console.log(reza);
+
+
+//
+
+console.log(`${reza.firstName} has ${reza.friends.length} friedns and his best friend called ${reza.friends[1]}`);
