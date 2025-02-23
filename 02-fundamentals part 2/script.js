@@ -174,28 +174,44 @@
 
 // basic array operations (methods)
 
-const friends = ['reza', 'ali', 'mamad'];
+// const friends = ['reza', 'ali', 'mamad'];
 
 // add elements
-friends.push('alireza');
-console.log(friends);
+// friends.push('alireza');
+// console.log(friends);
 
-friends.unshift('mohammadreza');
-console.log(friends);
+// friends.unshift('mohammadreza');
+// console.log(friends);
 
 // remove elements
-friends.pop();
-console.log(friends);
+// friends.pop();
+// console.log(friends);
 
-friends.shift();
-console.log(friends);
+// friends.shift();
+// console.log(friends);
 
 // 
-console.log(friends.indexOf('ali'));
+// console.log(friends.indexOf('ali'));
 
-console.log(friends.includes('Bob'));
+// console.log(friends.includes('Bob'));
 
-if(friends.includes('ali')){
-    console.log('your friend name ali.');
-}
+// if(friends.includes('ali')){
+//     console.log('your friend name ali.');
+// }
 
+
+
+
+// coding challenge #2 part 2
+
+
+const calcTip = function(bill){
+    return bill >= 50 && bill <=300 ? bill * 0.15 : bill * 0.20
+};
+
+const bills = [125,555,44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(bills, tips);
+
+const totals = [bills[0] + tips[0] , bills[1] + tips[1] , bills[2] + tips[2]];
+console.log(totals);
