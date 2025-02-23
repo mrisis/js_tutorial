@@ -274,27 +274,65 @@
 
 // object methods
 
-const reza = {
-    firstName:'reza',
-    lastName:'amin',
-    birthYear:2000,
-    job: 'programmer',
-    friends : ['alireza', 'mamad'],
-    hasDriverLicense: false,
+// const reza = {
+//     firstName:'reza',
+//     lastName:'amin',
+//     birthYear:2000,
+//     job: 'programmer',
+//     friends : ['alireza', 'mamad'],
+//     hasDriverLicense: false,
 
-    calcAge: function(){
-        this.age = 2024 - this.birthYear;
-        return this.age;
-    },
+//     calcAge: function(){
+//         this.age = 2024 - this.birthYear;
+//         return this.age;
+//     },
 
-    getSummery : function(){
-        return `${this.firstName} is a ${this.calcAge()} years old ${this.job} and has ${this.hasDriverLicense ? 'a' : 'no'} drivers license`
+//     getSummery : function(){
+//         return `${this.firstName} is a ${this.calcAge()} years old ${this.job} and has ${this.hasDriverLicense ? 'a' : 'no'} drivers license`
+//     }
+// };
+
+
+// console.log(reza.calcAge());
+// console.log(reza['calcAge']());
+// console.log(reza.age);
+
+// console.log(reza.getSummery());
+
+
+
+
+// coding challenge #3 part 2
+
+const mark= {
+    fullName:'mark',
+    mass:78,
+    height:1.69,
+
+    calcBmi: function(){
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
     }
+}
+
+const john = {
+    fullName: 'john',
+    mass: 92,
+    height: 1.95,
+
+    calcBmi: function(){
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+
+}
+
+mark.calcBmi();
+john.calcBmi();
+
+if(mark.bmi > john.bmi){
+    console.log(`${mark.fullName} with BMI ${mark.bmi} bigger than ${john.fullName} with BMI ${john.bmi}`);
+
+} else if(john.bmi > mark.bmi){
+    console.log(`${john.fullName} with BMI ${john.bmi} bigger than ${mark.fullName} with BMI ${mark.bmi}`);
 };
-
-
-console.log(reza.calcAge());
-console.log(reza['calcAge']());
-console.log(reza.age);
-
-console.log(reza.getSummery());
