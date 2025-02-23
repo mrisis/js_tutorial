@@ -234,20 +234,20 @@
 
 // dot vs bracket
 
-const reza = {
-    firstName:'reza',
-    lastName:'amin',
-    age: 2024 - 2000,
-    job: 'programmer',
-    friends: ['alireza', 'mamad'],
-};
+// const reza = {
+//     firstName:'reza',
+//     lastName:'amin',
+//     age: 2024 - 2000,
+//     job: 'programmer',
+//     friends: ['alireza', 'mamad'],
+// };
 
-console.log(reza.firstName);
-console.log(reza['firstName']);
+// console.log(reza.firstName);
+// console.log(reza['firstName']);
 
-const nameKey = 'Name';
-console.log(reza['first' + nameKey]);
-console.log(reza['last' + nameKey]);
+// const nameKey = 'Name';
+// console.log(reza['first' + nameKey]);
+// console.log(reza['last' + nameKey]);
 
 // const question = prompt('what do you want know reza?');
 
@@ -258,11 +258,43 @@ console.log(reza['last' + nameKey]);
 // };
 
 
-reza.location ="Iran";
-reza['telegram'] = "@jalal_aref";
-console.log(reza);
+// reza.location ="Iran";
+// reza['telegram'] = "@jalal_aref";
+// console.log(reza);
 
 
 //
 
-console.log(`${reza.firstName} has ${reza.friends.length} friedns and his best friend called ${reza.friends[1]}`);
+// console.log(`${reza.firstName} has ${reza.friends.length} friedns and his best friend called ${reza.friends[1]}`);
+
+
+
+
+
+
+// object methods
+
+const reza = {
+    firstName:'reza',
+    lastName:'amin',
+    birthYear:2000,
+    job: 'programmer',
+    friends : ['alireza', 'mamad'],
+    hasDriverLicense: false,
+
+    calcAge: function(){
+        this.age = 2024 - this.birthYear;
+        return this.age;
+    },
+
+    getSummery : function(){
+        return `${this.firstName} is a ${this.calcAge()} years old ${this.job} and has ${this.hasDriverLicense ? 'a' : 'no'} drivers license`
+    }
+};
+
+
+console.log(reza.calcAge());
+console.log(reza['calcAge']());
+console.log(reza.age);
+
+console.log(reza.getSummery());
