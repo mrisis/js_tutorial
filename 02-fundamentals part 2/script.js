@@ -121,19 +121,50 @@
 
 // coding challenge #1 part 2
 
-const calcAverage = (a,b,c) => (a + b + c) / 3;
+// const calcAverage = (a,b,c) => (a + b + c) / 3;
 
-const scoreDolphins = calcAverage(44,23,71);
-const scoreKoalas = calcAverage(65,54,49);
+// const scoreDolphins = calcAverage(44,23,71);
+// const scoreKoalas = calcAverage(65,54,49);
 
-const checkWinner = function(avgDolphins, avgKoalas){
-    if(avgDolphins >= 2*avgKoalas){
-        console.log(`dolphins winner ${avgDolphins} vs ${avgKoalas}`);
-    } else if(avgKoalas >= 2*avgDolphins){
-        console.log(`koalas winner ${avgKoalas} vs ${avgDolphins}`);
-    } else{
-        console.log('no team winner...');
-    }
-};
+// const checkWinner = function(avgDolphins, avgKoalas){
+//     if(avgDolphins >= 2*avgKoalas){
+//         console.log(`dolphins winner ${avgDolphins} vs ${avgKoalas}`);
+//     } else if(avgKoalas >= 2*avgDolphins){
+//         console.log(`koalas winner ${avgKoalas} vs ${avgDolphins}`);
+//     } else{
+//         console.log('no team winner...');
+//     }
+// };
 
-checkWinner(scoreDolphins, scoreKoalas);
+// checkWinner(scoreDolphins, scoreKoalas);
+
+
+
+// introduction to array
+
+const friends = ['ali', 'reza' , 'mamad'];
+console.log(friends);
+
+const y = new Array(2000,2008,2020);
+console.log(y);
+
+console.log(friends[1]);
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'alireza';
+console.log(friends);
+
+const reza = ['reza', 'amin', 2024 - 2000 , 'programmer', friends];
+console.log(reza);
+
+
+//
+const calcAge = function(birthYear){
+    return 2024 - birthYear;
+}
+
+const years = [2000,2001,2010];
+
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+console.log(ages);
