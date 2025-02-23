@@ -304,35 +304,43 @@
 
 // coding challenge #3 part 2
 
-const mark= {
-    fullName:'mark',
-    mass:78,
-    height:1.69,
+// const mark= {
+//     fullName:'mark',
+//     mass:78,
+//     height:1.69,
 
-    calcBmi: function(){
-        this.bmi = this.mass / this.height ** 2;
-        return this.bmi;
-    }
-}
+//     calcBmi: function(){
+//         this.bmi = this.mass / this.height ** 2;
+//         return this.bmi;
+//     }
+// }
 
-const john = {
-    fullName: 'john',
-    mass: 92,
-    height: 1.95,
+// const john = {
+//     fullName: 'john',
+//     mass: 92,
+//     height: 1.95,
 
-    calcBmi: function(){
-        this.bmi = this.mass / this.height ** 2;
-        return this.bmi;
-    }
+//     calcBmi: function(){
+//         this.bmi = this.mass / this.height ** 2;
+//         return this.bmi;
+//     }
 
-}
+// }
 
-mark.calcBmi();
-john.calcBmi();
+// mark.calcBmi();
+// john.calcBmi();
 
-if(mark.bmi > john.bmi){
-    console.log(`${mark.fullName} with BMI ${mark.bmi} bigger than ${john.fullName} with BMI ${john.bmi}`);
+// if(mark.bmi > john.bmi){
+//     console.log(`${mark.fullName} with BMI ${mark.bmi} bigger than ${john.fullName} with BMI ${john.bmi}`);
 
-} else if(john.bmi > mark.bmi){
-    console.log(`${john.fullName} with BMI ${john.bmi} bigger than ${mark.fullName} with BMI ${mark.bmi}`);
+// } else if(john.bmi > mark.bmi){
+//     console.log(`${john.fullName} with BMI ${john.bmi} bigger than ${mark.fullName} with BMI ${mark.bmi}`);
+// };
+
+
+
+// itearation the for loop
+
+for(let rep=1; rep <= 20; rep++){
+    console.log(`lifting weights repetition ${rep}`);
 };
