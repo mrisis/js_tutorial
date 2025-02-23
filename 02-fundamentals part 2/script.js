@@ -99,20 +99,41 @@
 
 // reviewing functions
 
-const calcAge=function (birthYear){
-    return 2024 - birthYear;
-}
+// const calcAge=function (birthYear){
+//     return 2024 - birthYear;
+// }
 
-const yearUntilRetirment = function (birthYear, firstName){
-    const age = calcAge(birthYear);
-    const retirment = 65 - age;
+// const yearUntilRetirment = function (birthYear, firstName){
+//     const age = calcAge(birthYear);
+//     const retirment = 65 - age;
 
-    if(retirment > 0){
-        return retirment;
-    }else{
-        return -1;
+//     if(retirment > 0){
+//         return retirment;
+//     }else{
+//         return -1;
+//     }
+// };
+
+// console.log(yearUntilRetirment(2000, 'reza'));
+// console.log(yearUntilRetirment(1920, 'alireza'));
+
+
+
+// coding challenge #1 part 2
+
+const calcAverage = (a,b,c) => (a + b + c) / 3;
+
+const scoreDolphins = calcAverage(44,23,71);
+const scoreKoalas = calcAverage(65,54,49);
+
+const checkWinner = function(avgDolphins, avgKoalas){
+    if(avgDolphins >= 2*avgKoalas){
+        console.log(`dolphins winner ${avgDolphins} vs ${avgKoalas}`);
+    } else if(avgKoalas >= 2*avgDolphins){
+        console.log(`koalas winner ${avgKoalas} vs ${avgDolphins}`);
+    } else{
+        console.log('no team winner...');
     }
 };
 
-console.log(yearUntilRetirment(2000, 'reza'));
-console.log(yearUntilRetirment(1920, 'alireza'));
+checkWinner(scoreDolphins, scoreKoalas);
