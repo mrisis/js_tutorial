@@ -142,29 +142,60 @@
 
 // introduction to array
 
-const friends = ['ali', 'reza' , 'mamad'];
+// const friends = ['ali', 'reza' , 'mamad'];
+// console.log(friends);
+
+// const y = new Array(2000,2008,2020);
+// console.log(y);
+
+// console.log(friends[1]);
+// console.log(friends.length);
+// console.log(friends[friends.length - 1]);
+
+// friends[2] = 'alireza';
+// console.log(friends);
+
+// const reza = ['reza', 'amin', 2024 - 2000 , 'programmer', friends];
+// console.log(reza);
+
+
+// //
+// const calcAge = function(birthYear){
+//     return 2024 - birthYear;
+// }
+
+// const years = [2000,2001,2010];
+
+// const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+// console.log(ages);
+
+
+
+
+// basic array operations (methods)
+
+const friends = ['reza', 'ali', 'mamad'];
+
+// add elements
+friends.push('alireza');
 console.log(friends);
 
-const y = new Array(2000,2008,2020);
-console.log(y);
-
-console.log(friends[1]);
-console.log(friends.length);
-console.log(friends[friends.length - 1]);
-
-friends[2] = 'alireza';
+friends.unshift('mohammadreza');
 console.log(friends);
 
-const reza = ['reza', 'amin', 2024 - 2000 , 'programmer', friends];
-console.log(reza);
+// remove elements
+friends.pop();
+console.log(friends);
 
+friends.shift();
+console.log(friends);
 
-//
-const calcAge = function(birthYear){
-    return 2024 - birthYear;
+// 
+console.log(friends.indexOf('ali'));
+
+console.log(friends.includes('Bob'));
+
+if(friends.includes('ali')){
+    console.log('your friend name ali.');
 }
 
-const years = [2000,2001,2010];
-
-const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
-console.log(ages);
