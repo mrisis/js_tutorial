@@ -399,24 +399,47 @@
 
 // looping backwards and loops in loops
 
-const reza = [
-    'reza',
-    'amin',
-    2024 - 2000,
-    'programmer',
-    ['alireza', 'mamad']
-];
+// const reza = [
+//     'reza',
+//     'amin',
+//     2024 - 2000,
+//     'programmer',
+//     ['alireza', 'mamad']
+// ];
 
-for(let i = reza.length - 1 ; i >=0; i--){
-    console.log(reza[i]);
-};
+// for(let i = reza.length - 1 ; i >=0; i--){
+//     console.log(reza[i]);
+// };
 
 
 // loops in loops
 
-for(let exercise = 1; exercise <=3; exercise++){
-    console.log(` ------- starting exercise ${exercise}`);
-    for(let rep =1; rep <=5; rep++){
-        console.log(`exercise ${exercise}: lifting repetition ${rep}`)
-    }
+// for(let exercise = 1; exercise <=3; exercise++){
+//     console.log(` ------- starting exercise ${exercise}`);
+//     for(let rep =1; rep <=5; rep++){
+//         console.log(`exercise ${exercise}: lifting repetition ${rep}`)
+//     }
+// };
+
+
+
+
+
+
+
+// while loop
+
+let rep =1;
+while(rep <=10){
+    console.log(`lifting weights repetition ${rep}`);
+    rep++;
+};
+
+
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+while(dice !== 6){
+    console.log(`your roled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1 ;
+    if(dice===6) console.log('loop is about to end...');
 };
