@@ -349,6 +349,56 @@
 
 // looping arrays breaking and continue
 
+// const reza = [
+//     'reza',
+//     'amin',
+//     2024 - 2000,
+//     'programmer',
+//     ['alireza', 'mamad']
+// ];
+
+// const types = [];
+
+// for(let i = 0 ; i < reza.length; i++){
+//     console.log(reza[i]);
+//     types.push(typeof reza[i]);
+// };
+// console.log(types);
+
+//
+
+// const years = [2000,2001,2002,2020];
+// const ages = [];
+
+// for(let i = 0; i < years.length; i++){
+//     ages.push(2024 - years[i]);
+// };
+// console.log(ages);
+
+
+// continue
+
+// for(let i=0; i< reza.length;i++){
+//     if(typeof reza[i] !== 'string') continue;
+//     console.log(reza[i]);
+// };
+
+
+// break
+
+// for(let i = 0 ; i < reza.length; i++){
+//     if(typeof reza[i] === 'number') break;
+//     console.log(reza[i]);
+// };
+
+
+
+
+
+
+
+// looping backwards and loops in loops
+
 const reza = [
     'reza',
     'amin',
@@ -357,36 +407,16 @@ const reza = [
     ['alireza', 'mamad']
 ];
 
-const types = [];
-
-for(let i = 0 ; i < reza.length; i++){
-    console.log(reza[i]);
-    types.push(typeof reza[i]);
-};
-console.log(types);
-
-//
-
-const years = [2000,2001,2002,2020];
-const ages = [];
-
-for(let i = 0; i < years.length; i++){
-    ages.push(2024 - years[i]);
-};
-console.log(ages);
-
-
-// continue
-
-for(let i=0; i< reza.length;i++){
-    if(typeof reza[i] !== 'string') continue;
+for(let i = reza.length - 1 ; i >=0; i--){
     console.log(reza[i]);
 };
 
 
-// break
+// loops in loops
 
-for(let i = 0 ; i < reza.length; i++){
-    if(typeof reza[i] === 'number') break;
-    console.log(reza[i]);
+for(let exercise = 1; exercise <=3; exercise++){
+    console.log(` ------- starting exercise ${exercise}`);
+    for(let rep =1; rep <=5; rep++){
+        console.log(`exercise ${exercise}: lifting repetition ${rep}`)
+    }
 };
