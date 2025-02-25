@@ -32,15 +32,27 @@
 
 // debugger
 
-const measurKelvin = function () {
-  const measurement = {
-    type: "temp",
-    unit: "cels",
-    value: Number(prompt("Degrees celsisus:")),
-  };
-  debugger;
-  const kelvin = measurement.value + 270;
-  return kelvin;
+// const measurKelvin = function () {
+//   const measurement = {
+//     type: "temp",
+//     unit: "cels",
+//     value: Number(prompt("Degrees celsisus:")),
+//   };
+//   debugger;
+//   const kelvin = measurement.value + 270;
+//   return kelvin;
+// };
+
+// console.log(measurKelvin());
+
+// coding challenge
+
+const printForecast = function (arr) {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str = str + `${arr[i]} C in ${i + 1} days ... `;
+  }
+  console.log("..." + str);
 };
 
-console.log(measurKelvin());
+printForecast([17, 21, 23]);
