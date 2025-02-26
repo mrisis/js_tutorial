@@ -16,8 +16,7 @@
 
 // handling click events
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
-document.querySelector(".number").textContent = secretNumber;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;
 
@@ -30,6 +29,8 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").textContent = "NO Number!";
   } else if (guess === secretNumber) {
     document.querySelector(".message").textContent = "Correct Number!✌️";
+    document.querySelector(".number").textContent = secretNumber;
+
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".number").style.width = "30rem";
     // when guess too high
@@ -54,4 +55,18 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".message").textContent = "yuo lost the game🎃";
     }
   }
+});
+
+// again logic
+
+document.querySelector(".again").addEventListener("click", function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".message").textContent = "start guessing...";
+  document.querySelector(".score").textContent = score;
+  document.querySelector(".guess").value = "";
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").style.width = "15rem";
 });
