@@ -51,36 +51,76 @@
 
 // console.log(this);
 
-function calcAge(birthYear) {
-  console.log(2024 - birthYear);
-  console.log(this);
-}
+// function calcAge(birthYear) {
+//   console.log(2024 - birthYear);
+//   console.log(this);
+// }
 
 // calcAge(2000);
 
-const calcAgeArrow = (birthYear) => {
-  console.log(2024 - birthYear);
-  console.log(this);
-};
+// const calcAgeArrow = (birthYear) => {
+//   console.log(2024 - birthYear);
+//   console.log(this);
+// };
 
 // calcAgeArrow(2000);
 
+// const reza = {
+//   year: 2000,
+//   calcAge: function () {
+//     console.log(2024 - this.year);
+//     console.log(this);
+//   },
+// };
+
+// reza.calcAge();
+
+// const matilda = {
+//   year: 2005,
+// };
+
+// matilda.calcAge = reza.calcAge;
+// matilda.calcAge();
+
+// const f = reza.calcAge;
+// f();
+
+//////////////////////
+
 const reza = {
+  firstName: "reza",
   year: 2000,
   calcAge: function () {
     console.log(2024 - this.year);
-    console.log(this);
+
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(self.year >= 1981 && self.year <= 1991);
+    // };
+
+    const isMillenial = () => {
+      console.log(this.year >= 1981 && this.year <= 1991);
+    };
+    isMillenial();
   },
+  greet: () => console.log(`hey ${this.firstName}`),
 };
 
+// reza.greet(); => hey undefiend
 reza.calcAge();
 
-const matilda = {
-  year: 2005,
+////
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 3);
+addExpr(2, 3, 4, 5);
+
+const addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
 };
 
-matilda.calcAge = reza.calcAge;
-matilda.calcAge();
-
-const f = reza.calcAge;
-f();
+addArrow(2, 3);  => error
