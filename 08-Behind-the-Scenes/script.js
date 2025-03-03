@@ -87,40 +87,70 @@
 
 //////////////////////
 
-const reza = {
-  firstName: "reza",
-  year: 2000,
-  calcAge: function () {
-    console.log(2024 - this.year);
+// const reza = {
+//   firstName: "reza",
+//   year: 2000,
+//   calcAge: function () {
+//     console.log(2024 - this.year);
 
-    // const self = this;
-    // const isMillenial = function () {
-    //   console.log(self.year >= 1981 && self.year <= 1991);
-    // };
+// const self = this;
+// const isMillenial = function () {
+//   console.log(self.year >= 1981 && self.year <= 1991);
+// };
 
-    const isMillenial = () => {
-      console.log(this.year >= 1981 && this.year <= 1991);
-    };
-    isMillenial();
-  },
-  greet: () => console.log(`hey ${this.firstName}`),
-};
+//     const isMillenial = () => {
+//       console.log(this.year >= 1981 && this.year <= 1991);
+//     };
+//     isMillenial();
+//   },
+//   greet: () => console.log(`hey ${this.firstName}`),
+// };
 
 // reza.greet(); => hey undefiend
-reza.calcAge();
+// reza.calcAge();
 
 ////
 
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-addExpr(2, 3);
-addExpr(2, 3, 4, 5);
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 3);
+// addExpr(2, 3, 4, 5);
 
-const addArrow = (a, b) => {
-  console.log(arguments);
-  return a + b;
+// const addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+
+// addArrow(2, 3);  => error
+
+//////
+
+// primitive types
+
+let lastName = "amin";
+let oldLastName = lastName;
+lastName = "poori";
+console.log(lastName);
+console.log(oldLastName);
+
+// refrence types
+
+const reza = {
+  firstName: "reza",
+  lastName: "amin",
+  age: 24,
 };
 
-addArrow(2, 3);  => error
+const marridReza = reza;
+// marridReza.lastName = "poori";
+
+// console.log(reza);
+// console.log(marridReza);
+
+const rezaCopy = Object.assign({}, reza);
+
+rezaCopy.lastName = "poori";
+console.log(reza);
+console.log(rezaCopy);
