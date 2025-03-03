@@ -38,6 +38,10 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`here is pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(mainIng);
+    console.log(otherIng);
+  },
 };
 
 // destructring arrays
@@ -108,23 +112,23 @@ const restaurant = {
 //   address: "golshan",
 // });
 
-const arr = [7, 8, 9];
+// const arr = [7, 8, 9];
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
-console.log(...arr);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+// console.log(...arr);
 
-const newMenu = [...restaurant.mainMenu, "benana"];
-console.log(newMenu);
-console.log(...newMenu);
+// const newMenu = [...restaurant.mainMenu, "benana"];
+// console.log(newMenu);
+// console.log(...newMenu);
 
-const copyMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(copyMenu);
+// const copyMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(copyMenu);
 
-const str = "reza";
-const letters = [...str];
-console.log(letters);
-console.log(...str);
+// const str = "reza";
+// const letters = [...str];
+// console.log(letters);
+// console.log(...str);
 
 // const ingredients = [prompt("ing1?"), prompt("ing2"), prompt("ing3")];
 
@@ -132,12 +136,44 @@ console.log(...str);
 
 // restaurant.orderPasta(...ingredients);
 
-const newRestaurant = { ...restaurant, funder: "rezaAmin" };
-console.log(newRestaurant);
+// const newRestaurant = { ...restaurant, funder: "rezaAmin" };
+// console.log(newRestaurant);
 
 // copy objects
 
-const copyRestaurant = { ...restaurant };
-copyRestaurant.name = "reza restaurant";
+// const copyRestaurant = { ...restaurant };
+// copyRestaurant.name = "reza restaurant";
 
-console.log(restaurant.name, copyRestaurant.name);
+// console.log(restaurant.name, copyRestaurant.name);
+
+// rest pattern & parameters
+
+const arr = [1, 2, ...[3, 4]];
+console.log(arr);
+
+const [a, b, ...others] = arr;
+console.log(a, b, others);
+
+const [pizza, risotto, ...otherfood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherfood);
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+  console.log(numbers);
+};
+
+add(2, 3, 4);
+add(2, 3, 5, 4, 8, 9, 9, 9, 9, 9, 9, 9);
+
+const x = [2, 3, 4, 5];
+add(...x);
+
+restaurant.orderPizza("mushrooms", "onion", "benana");
+restaurant.orderPizza("benana");
