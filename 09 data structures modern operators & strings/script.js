@@ -200,12 +200,43 @@ const restaurant = {
 
 //nulish coalescing operators
 
-restaurant.numGuest = 0;
+// restaurant.numGuest = 0;
 
-const guestCorrect = restaurant.numGuest ?? 10;
-console.log(guestCorrect);
+// const guestCorrect = restaurant.numGuest ?? 10;
+// console.log(guestCorrect);
 
 // nulish value === null , undefiend
-restaurant.numGuest = undefined;
-const secondGuest = restaurant.numGuest ?? 10;
-console.log(secondGuest);
+// restaurant.numGuest = undefined;
+// const secondGuest = restaurant.numGuest ?? 10;
+// console.log(secondGuest);
+
+// logical assignment operators
+
+const rest1 = {
+  name: "la pizza",
+  // numberGuests: 20,
+  numberGuests: 0,
+};
+
+const rest2 = {
+  name: "reza pizza",
+  owner: "Amin",
+};
+
+// or assignment operator
+
+// rest1.numberGuests ||= 10;
+// rest2.numberGuests ||= 10;
+
+// nulish assignment operator
+
+rest1.numberGuests ??= 10;
+rest2.numberGuests ??= 10;
+
+// and assignment operators
+
+rest1.owner &&= "<anonymous>";
+rest2.owner &&= "<anoymous>";
+
+console.log(rest1);
+console.log(rest2);
