@@ -180,20 +180,32 @@ const restaurant = {
 
 // short circuiting
 
-console.log(3 || "reza");
+// console.log(3 || "reza");
 
-console.log("" || "reza");
-console.log("" || null || 0 || 23);
-console.log(null || undefined);
+// console.log("" || "reza");
+// console.log("" || null || 0 || 23);
+// console.log(null || undefined);
 
-restaurant.numberGuest = 23;
+// restaurant.numberGuest = 23;
 
-const guests1 = restaurant.numberGuest || 10;
-console.log(guests1);
+// const guests1 = restaurant.numberGuest || 10;
+// console.log(guests1);
 
-console.log("" && "reza");
-console.log(0 && 23);
-console.log(null && undefined);
-console.log("hello" && 23 && null && "reza");
+// console.log("" && "reza");
+// console.log(0 && 23);
+// console.log(null && undefined);
+// console.log("hello" && 23 && null && "reza");
 
-restaurant.orderPizza && restaurant.orderPizza("benana");
+// restaurant.orderPizza && restaurant.orderPizza("benana");
+
+//nulish coalescing operators
+
+restaurant.numGuest = 0;
+
+const guestCorrect = restaurant.numGuest ?? 10;
+console.log(guestCorrect);
+
+// nulish value === null , undefiend
+restaurant.numGuest = undefined;
+const secondGuest = restaurant.numGuest ?? 10;
+console.log(secondGuest);
