@@ -30,13 +30,18 @@ const restaurant = {
       close: 24,
     },
   },
+  orderDelivery: function ({ starterIndex = 1, mainIndex = 1, address }) {
+    console.log(
+      `$start menu ${this.starterMenu[starterIndex]} , address ${address}, manimenu ${this.mainMenu[mainIndex]}`
+    );
+  },
 };
 
 // destructring arrays
 
-const arr = [4, 5, 6];
+// const arr = [4, 5, 6];
 
-const [x, y, z] = arr;
+// const [x, y, z] = arr;
 // console.log(arr);
 // console.log(x, y, z);
 // console.log(x);
@@ -44,23 +49,58 @@ const [x, y, z] = arr;
 // const [first, second] = restaurant.categories;
 // console.log(first, second);
 
-let [first, , third] = restaurant.categories;
-console.log(first, third);
+// let [first, , third] = restaurant.categories;
+// console.log(first, third);
 
-[first, third] = [third, first];
-console.log(first, third);
+// [first, third] = [third, first];
+// console.log(first, third);
 
-const [starter, main] = restaurant.order(2, 0);
-console.log(starter, main);
+// const [starter, main] = restaurant.order(2, 0);
+// console.log(starter, main);
 
 // nested destructring
 
-const nested = [2, 4, [5, 6]];
+// const nested = [2, 4, [5, 6]];
 
-const [i, , [k, j]] = nested;
-console.log(i, j, k);
+// const [i, , [k, j]] = nested;
+// console.log(i, j, k);
 
 // default values
 
-const [p = NaN, q = NaN, r = NaN] = [8, 9];
-console.log(p, q, r);
+// const [p = NaN, q = NaN, r = NaN] = [8, 9];
+// console.log(p, q, r);
+
+//// destructring objects
+
+const { openingHours, categories } = restaurant;
+console.log(openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+let a = 111;
+let b = 999;
+
+const obj = { a: 23, b: 7, c: 56 };
+({ a, b } = obj);
+console.log(a, b);
+
+//
+const { fri } = openingHours;
+console.log(fri);
+
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
+
+//
+
+restaurant.orderDelivery({
+  starterIndex: 2,
+  address: "golshan",
+});
