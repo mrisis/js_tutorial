@@ -35,6 +35,9 @@ const restaurant = {
       `$start menu ${this.starterMenu[starterIndex]} , address ${address}, manimenu ${this.mainMenu[mainIndex]}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`here is pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
 // destructring arrays
@@ -72,35 +75,69 @@ const restaurant = {
 
 //// destructring objects
 
-const { openingHours, categories } = restaurant;
-console.log(openingHours, categories);
+// const { openingHours, categories } = restaurant;
+// console.log(openingHours, categories);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
 
-let a = 111;
-let b = 999;
+// let a = 111;
+// let b = 999;
 
-const obj = { a: 23, b: 7, c: 56 };
-({ a, b } = obj);
-console.log(a, b);
-
-//
-const { fri } = openingHours;
-console.log(fri);
-
-const {
-  fri: { open, close },
-} = openingHours;
-console.log(open, close);
+// const obj = { a: 23, b: 7, c: 56 };
+// ({ a, b } = obj);
+// console.log(a, b);
 
 //
+// const { fri } = openingHours;
+// console.log(fri);
 
-restaurant.orderDelivery({
-  starterIndex: 2,
-  address: "golshan",
-});
+// const {
+//   fri: { open, close },
+// } = openingHours;
+// console.log(open, close);
+
+//
+
+// restaurant.orderDelivery({
+//   starterIndex: 2,
+//   address: "golshan",
+// });
+
+const arr = [7, 8, 9];
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+console.log(...arr);
+
+const newMenu = [...restaurant.mainMenu, "benana"];
+console.log(newMenu);
+console.log(...newMenu);
+
+const copyMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(copyMenu);
+
+const str = "reza";
+const letters = [...str];
+console.log(letters);
+console.log(...str);
+
+// const ingredients = [prompt("ing1?"), prompt("ing2"), prompt("ing3")];
+
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+const newRestaurant = { ...restaurant, funder: "rezaAmin" };
+console.log(newRestaurant);
+
+// copy objects
+
+const copyRestaurant = { ...restaurant };
+copyRestaurant.name = "reza restaurant";
+
+console.log(restaurant.name, copyRestaurant.name);
