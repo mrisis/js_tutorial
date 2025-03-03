@@ -212,16 +212,16 @@ const restaurant = {
 
 // logical assignment operators
 
-const rest1 = {
-  name: "la pizza",
-  // numberGuests: 20,
-  numberGuests: 0,
-};
+// const rest1 = {
+//   name: "la pizza",
+// numberGuests: 20,
+//   numberGuests: 0,
+// };
 
-const rest2 = {
-  name: "reza pizza",
-  owner: "Amin",
-};
+// const rest2 = {
+//   name: "reza pizza",
+//   owner: "Amin",
+// };
 
 // or assignment operator
 
@@ -230,13 +230,92 @@ const rest2 = {
 
 // nulish assignment operator
 
-rest1.numberGuests ??= 10;
-rest2.numberGuests ??= 10;
+// rest1.numberGuests ??= 10;
+// rest2.numberGuests ??= 10;
 
 // and assignment operators
 
-rest1.owner &&= "<anonymous>";
-rest2.owner &&= "<anoymous>";
+// rest1.owner &&= "<anonymous>";
+// rest2.owner &&= "<anoymous>";
 
-console.log(rest1);
-console.log(rest2);
+// console.log(rest1);
+// console.log(rest2);
+
+// coding challenge #1 part 09
+
+const game = {
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// answers:
+
+//1.
+
+const [players1, players2] = game.players;
+console.log(players1, players2);
+
+//2.
+const [gk, ...fieldplayers] = players1;
+console.log(gk, fieldplayers);
+
+//3.
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+
+//4.
+const player1Final = [...players1, "Thiago", "Coutinho", "Periscic"];
+console.log(player1Final);
+
+//5.
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, team2, draw);
+
+//6.
+const printGoals = function (...players) {
+  console.log(`${players.length} goals scored`);
+};
+
+printGoals(...game.scored);
+
+//7.
+team1 < team2 && console.log("team1 win");
+team2 < team1 && console.log("team2 win");
