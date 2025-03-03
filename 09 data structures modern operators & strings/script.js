@@ -148,32 +148,52 @@ const restaurant = {
 
 // rest pattern & parameters
 
-const arr = [1, 2, ...[3, 4]];
-console.log(arr);
+// const arr = [1, 2, ...[3, 4]];
+// console.log(arr);
 
-const [a, b, ...others] = arr;
-console.log(a, b, others);
+// const [a, b, ...others] = arr;
+// console.log(a, b, others);
 
-const [pizza, risotto, ...otherfood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherfood);
+// const [pizza, risotto, ...otherfood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherfood);
 
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
-  console.log(numbers);
-};
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+//   console.log(numbers);
+// };
 
-add(2, 3, 4);
-add(2, 3, 5, 4, 8, 9, 9, 9, 9, 9, 9, 9);
+// add(2, 3, 4);
+// add(2, 3, 5, 4, 8, 9, 9, 9, 9, 9, 9, 9);
 
-const x = [2, 3, 4, 5];
-add(...x);
+// const x = [2, 3, 4, 5];
+// add(...x);
 
-restaurant.orderPizza("mushrooms", "onion", "benana");
-restaurant.orderPizza("benana");
+// restaurant.orderPizza("mushrooms", "onion", "benana");
+// restaurant.orderPizza("benana");
+
+// short circuiting
+
+console.log(3 || "reza");
+
+console.log("" || "reza");
+console.log("" || null || 0 || 23);
+console.log(null || undefined);
+
+restaurant.numberGuest = 23;
+
+const guests1 = restaurant.numberGuest || 10;
+console.log(guests1);
+
+console.log("" && "reza");
+console.log(0 && 23);
+console.log(null && undefined);
+console.log("hello" && 23 && null && "reza");
+
+restaurant.orderPizza && restaurant.orderPizza("benana");
