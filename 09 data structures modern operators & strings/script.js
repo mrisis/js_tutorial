@@ -338,4 +338,23 @@ const game = {
 //   console.log(i, el);
 // }
 
-/////
+///// optional chanining
+
+console.log(restaurant.openingHours.mon?.open);
+
+console.log(restaurant.openingHours?.mon?.open);
+
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? "closed";
+  console.log(`On ${day} opened at ${open}`);
+}
+
+console.log(restaurant.order?.(0, 1) ?? "method does not exist");
+
+console.log(restaurant.orderRisso?.(0, 1) ?? "method does not exist");
+
+const users = [{ name: "reza", age: 24 }];
+
+console.log(users[0]?.name ?? "user array empty");
