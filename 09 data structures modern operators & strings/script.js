@@ -390,21 +390,46 @@ const game = {
 
 //1.
 
-for (const [i, player] of game.scored.entries()) {
-  console.log(`Goal ${i + 1} : ${player}`);
-}
+// for (const [i, player] of game.scored.entries()) {
+//   console.log(`Goal ${i + 1} : ${player}`);
+// }
 
 //2.
-let average = 0;
-for (const odd of Object.values(game.odds)) {
-  average += odd;
-}
+// let average = 0;
+// for (const odd of Object.values(game.odds)) {
+//   average += odd;
+// }
 
-average /= Object.values(game.odds).length;
-console.log(average);
+// average /= Object.values(game.odds).length;
+// console.log(average);
 
 //3.
-for (const [team, odd] of Object.entries(game.odds)) {
-  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
-  console.log(`odd of ${teamStr} ${odd}`);
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+//   console.log(`odd of ${teamStr} ${odd}`);
+// }
+
+//// sets
+
+const orderSet = new Set(["pizza", "pasta", "pizza", "pasta", "potato"]);
+
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(orderSet.has("benana"));
+console.log(orderSet.has("pizza"));
+console.log(orderSet.add("benana"));
+console.log(orderSet.delete("pizza"));
+// orderSet.clear();
+
+console.log(orderSet);
+
+for (const order of orderSet) {
+  console.log(order);
 }
+
+const staff = ["waiter", "chef", "manager", "chef", "waiter"];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set("reza").size);
