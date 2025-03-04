@@ -363,25 +363,48 @@ const game = {
 
 // looping with keys
 
-const properties = Object.keys(openingHours);
-console.log(properties);
+// const properties = Object.keys(openingHours);
+// console.log(properties);
 
-for (const day of properties) {
-  console.log(day);
-}
+// for (const day of properties) {
+//   console.log(day);
+// }
 
 // looping with values
 
-const values = Object.values(openingHours);
-console.log(values);
-for (const x of values) {
-  console.log(x);
-}
+// const values = Object.values(openingHours);
+// console.log(values);
+// for (const x of values) {
+//   console.log(x);
+// }
 
 // looping with keys and values
-const entries = Object.entries(openingHours);
-console.log(entries);
+// const entries = Object.entries(openingHours);
+// console.log(entries);
 
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
+
+//// coding challenge #2 part 09
+
+//1.
+
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1} : ${player}`);
+}
+
+//2.
+let average = 0;
+for (const odd of Object.values(game.odds)) {
+  average += odd;
+}
+
+average /= Object.values(game.odds).length;
+console.log(average);
+
+//3.
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+  console.log(`odd of ${teamStr} ${odd}`);
 }
