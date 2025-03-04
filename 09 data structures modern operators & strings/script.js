@@ -288,34 +288,44 @@ const game = {
 
 //1.
 
-const [players1, players2] = game.players;
-console.log(players1, players2);
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
 
-//2.
-const [gk, ...fieldplayers] = players1;
-console.log(gk, fieldplayers);
+// //2.
+// const [gk, ...fieldplayers] = players1;
+// console.log(gk, fieldplayers);
 
-//3.
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
+// //3.
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
 
-//4.
-const player1Final = [...players1, "Thiago", "Coutinho", "Periscic"];
-console.log(player1Final);
+// //4.
+// const player1Final = [...players1, "Thiago", "Coutinho", "Periscic"];
+// console.log(player1Final);
 
-//5.
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log(team1, team2, draw);
+// //5.
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log(team1, team2, draw);
 
 //6.
-const printGoals = function (...players) {
-  console.log(`${players.length} goals scored`);
-};
+// const printGoals = function (...players) {
+//   console.log(`${players.length} goals scored`);
+// };
 
-printGoals(...game.scored);
+// printGoals(...game.scored);
 
 //7.
-team1 < team2 && console.log("team1 win");
-team2 < team1 && console.log("team2 win");
+// team1 < team2 && console.log("team1 win");
+// team2 < team1 && console.log("team2 win");
+
+///// looping array the for of
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(i, el);
+}
