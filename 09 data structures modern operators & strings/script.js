@@ -436,22 +436,61 @@ const game = {
 
 // maps fundamentals
 
-const rest = new Map();
+// const rest = new Map();
 
-rest.set("name", "reza");
-rest.set(1, "tehran");
-rest.set(2, "Isfahan");
-rest.set("categorries", ["italian", "iranian", "organic"]);
+// rest.set("name", "reza");
+// rest.set(1, "tehran");
+// rest.set(2, "Isfahan");
+// rest.set("categorries", ["italian", "iranian", "organic"]);
 
-console.log(rest.get("name"));
-console.log(rest.has("categorries"));
-console.log(rest.size);
-rest.delete(1);
-// rest.clear();
+// console.log(rest.get("name"));
+// console.log(rest.has("categorries"));
+// console.log(rest.size);
+// rest.delete(1);
+// // rest.clear();
 
-const arr = [1, 2];
-rest.set(arr, "time to ");
+// const arr = [1, 2];
+// rest.set(arr, "time to ");
 
-rest.set(document.querySelector("h1"), "Heading");
+// rest.set(document.querySelector("h1"), "Heading");
 
-console.log(rest);
+// console.log(rest);
+
+// maps iterations
+
+const question = new Map([
+  ["question", "whats your best language?"],
+  [1, "C"],
+  [2, "java"],
+  [3, "js"],
+  ["correct", 3],
+  [true, "correct"],
+  [false, "try again!"],
+]);
+
+console.log(question);
+
+console.log(question.get("question"));
+for (const [key, value] of question) {
+  if (typeof key === "number") {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+
+// const answer = Number(prompt("your answer:"));
+let answer = 3;
+
+console.log(question.get(question.get("correct") === answer));
+
+// map to objects
+
+const hoursMap = Object.entries(openingHours);
+console.log(hoursMap);
+
+// map to arrays
+
+console.log([...question]);
+
+console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
