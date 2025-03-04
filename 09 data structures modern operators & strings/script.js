@@ -340,21 +340,48 @@ const game = {
 
 ///// optional chanining
 
-console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours.mon?.open);
 
-console.log(restaurant.openingHours?.mon?.open);
+// console.log(restaurant.openingHours?.mon?.open);
 
-const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+// const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-for (const day of days) {
-  const open = restaurant.openingHours[day]?.open ?? "closed";
-  console.log(`On ${day} opened at ${open}`);
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open ?? "closed";
+//   console.log(`On ${day} opened at ${open}`);
+// }
+
+// console.log(restaurant.order?.(0, 1) ?? "method does not exist");
+
+// console.log(restaurant.orderRisso?.(0, 1) ?? "method does not exist");
+
+// const users = [{ name: "reza", age: 24 }];
+
+// console.log(users[0]?.name ?? "user array empty");
+
+///// looping objects keys , values , entries
+
+// looping with keys
+
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+for (const day of properties) {
+  console.log(day);
 }
 
-console.log(restaurant.order?.(0, 1) ?? "method does not exist");
+// looping with values
 
-console.log(restaurant.orderRisso?.(0, 1) ?? "method does not exist");
+const values = Object.values(openingHours);
+console.log(values);
+for (const x of values) {
+  console.log(x);
+}
 
-const users = [{ name: "reza", age: 24 }];
+// looping with keys and values
+const entries = Object.entries(openingHours);
+console.log(entries);
 
-console.log(users[0]?.name ?? "user array empty");
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
