@@ -411,25 +411,47 @@ const game = {
 
 //// sets
 
-const orderSet = new Set(["pizza", "pasta", "pizza", "pasta", "potato"]);
+// const orderSet = new Set(["pizza", "pasta", "pizza", "pasta", "potato"]);
 
-console.log(orderSet);
-console.log(orderSet.size);
-console.log(orderSet.has("benana"));
-console.log(orderSet.has("pizza"));
-console.log(orderSet.add("benana"));
-console.log(orderSet.delete("pizza"));
-// orderSet.clear();
+// console.log(orderSet);
+// console.log(orderSet.size);
+// console.log(orderSet.has("benana"));
+// console.log(orderSet.has("pizza"));
+// console.log(orderSet.add("benana"));
+// console.log(orderSet.delete("pizza"));
+// // orderSet.clear();
 
-console.log(orderSet);
+// console.log(orderSet);
 
-for (const order of orderSet) {
-  console.log(order);
-}
+// for (const order of orderSet) {
+//   console.log(order);
+// }
 
-const staff = ["waiter", "chef", "manager", "chef", "waiter"];
+// const staff = ["waiter", "chef", "manager", "chef", "waiter"];
 
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
 
-console.log(new Set("reza").size);
+// console.log(new Set("reza").size);
+
+// maps fundamentals
+
+const rest = new Map();
+
+rest.set("name", "reza");
+rest.set(1, "tehran");
+rest.set(2, "Isfahan");
+rest.set("categorries", ["italian", "iranian", "organic"]);
+
+console.log(rest.get("name"));
+console.log(rest.has("categorries"));
+console.log(rest.size);
+rest.delete(1);
+// rest.clear();
+
+const arr = [1, 2];
+rest.set(arr, "time to ");
+
+rest.set(document.querySelector("h1"), "Heading");
+
+console.log(rest);
