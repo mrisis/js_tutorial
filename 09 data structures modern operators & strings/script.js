@@ -458,39 +458,75 @@ const game = {
 
 // maps iterations
 
-const question = new Map([
-  ["question", "whats your best language?"],
-  [1, "C"],
-  [2, "java"],
-  [3, "js"],
-  ["correct", 3],
-  [true, "correct"],
-  [false, "try again!"],
-]);
+// const question = new Map([
+//   ["question", "whats your best language?"],
+//   [1, "C"],
+//   [2, "java"],
+//   [3, "js"],
+//   ["correct", 3],
+//   [true, "correct"],
+//   [false, "try again!"],
+// ]);
 
-console.log(question);
+// console.log(question);
 
-console.log(question.get("question"));
-for (const [key, value] of question) {
-  if (typeof key === "number") {
-    console.log(`Answer ${key}: ${value}`);
-  }
-}
+// console.log(question.get("question"));
+// for (const [key, value] of question) {
+//   if (typeof key === "number") {
+//     console.log(`Answer ${key}: ${value}`);
+//   }
+// }
 
 // const answer = Number(prompt("your answer:"));
-let answer = 3;
+// let answer = 3;
 
-console.log(question.get(question.get("correct") === answer));
+// console.log(question.get(question.get("correct") === answer));
 
 // map to objects
 
-const hoursMap = Object.entries(openingHours);
-console.log(hoursMap);
+// const hoursMap = Object.entries(openingHours);
+// console.log(hoursMap);
 
 // map to arrays
 
-console.log([...question]);
+// console.log([...question]);
 
-console.log([...question.entries()]);
-console.log([...question.keys()]);
-console.log([...question.values()]);
+// console.log([...question.entries()]);
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
+
+// coding challenge #3 part 09
+
+const gameEvents = new Map([
+  [17, "⚽️ GOAL"],
+  [36, "🔁 Substitution"],
+  [47, "⚽️ GOAL"],
+  [61, "🔁 Substitution"],
+  [64, "🔶 Yellow card"],
+  [69, "🔴 Red card"],
+  [70, "🔁 Substitution"],
+  [72, "🔁 Substitution"],
+  [76, "⚽️ GOAL"],
+  [80, "⚽️ GOAL"],
+  [92, "🔶 Yellow card"],
+]);
+
+//1.
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+//2.
+gameEvents.delete(64);
+console.log(gameEvents);
+
+//3.
+const time = [...new Set(gameEvents.keys())].pop();
+console.log(
+  `An event happened , on average , every ${time / gameEvents.size} minutes`
+);
+
+//4.
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? "First" : "Second";
+  console.log(`[${half} HALF] ${min} : ${event}`);
+}
