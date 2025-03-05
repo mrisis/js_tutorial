@@ -512,21 +512,50 @@ const gameEvents = new Map([
 ]);
 
 //1.
-const events = [...new Set(gameEvents.values())];
-console.log(events);
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
 
 //2.
-gameEvents.delete(64);
-console.log(gameEvents);
+// gameEvents.delete(64);
+// console.log(gameEvents);
 
 //3.
-const time = [...new Set(gameEvents.keys())].pop();
-console.log(
-  `An event happened , on average , every ${time / gameEvents.size} minutes`
-);
+// const time = [...new Set(gameEvents.keys())].pop();
+// console.log(
+//   `An event happened , on average , every ${time / gameEvents.size} minutes`
+// );
 
 //4.
-for (const [min, event] of gameEvents) {
-  const half = min <= 45 ? "First" : "Second";
-  console.log(`[${half} HALF] ${min} : ${event}`);
-}
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? "First" : "Second";
+//   console.log(`[${half} HALF] ${min} : ${event}`);
+// }
+
+// working with strings part 1
+
+const airLine = "TAP Air Iran";
+const plane = "A320";
+
+console.log(plane[0]);
+console.log(plane[3]);
+
+console.log(plane.indexOf("3"));
+console.log(airLine.lastIndexOf("A"));
+
+console.log(airLine.slice(4));
+console.log(airLine.slice(4, 7));
+
+console.log(airLine.slice(0, airLine.indexOf(" ")));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === "B" || s === "E") {
+    console.log("you go the middle seat");
+  } else {
+    console.log("you got lucky");
+  }
+};
+
+checkMiddleSeat("22E");
+checkMiddleSeat("2C");
+checkMiddleSeat("32B");
