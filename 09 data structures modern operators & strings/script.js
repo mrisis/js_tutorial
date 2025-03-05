@@ -536,26 +536,79 @@ const gameEvents = new Map([
 const airLine = "TAP Air Iran";
 const plane = "A320";
 
-console.log(plane[0]);
-console.log(plane[3]);
+// console.log(plane[0]);
+// console.log(plane[3]);
 
-console.log(plane.indexOf("3"));
-console.log(airLine.lastIndexOf("A"));
+// console.log(plane.indexOf("3"));
+// console.log(airLine.lastIndexOf("A"));
 
-console.log(airLine.slice(4));
-console.log(airLine.slice(4, 7));
+// console.log(airLine.slice(4));
+// console.log(airLine.slice(4, 7));
 
-console.log(airLine.slice(0, airLine.indexOf(" ")));
+// console.log(airLine.slice(0, airLine.indexOf(" ")));
 
-const checkMiddleSeat = function (seat) {
-  const s = seat.slice(-1);
-  if (s === "B" || s === "E") {
-    console.log("you go the middle seat");
+// const checkMiddleSeat = function (seat) {
+//   const s = seat.slice(-1);
+//   if (s === "B" || s === "E") {
+//     console.log("you go the middle seat");
+//   } else {
+//     console.log("you got lucky");
+//   }
+// };
+
+// checkMiddleSeat("22E");
+// checkMiddleSeat("2C");
+// checkMiddleSeat("32B");
+
+// working with string part 2
+
+console.log(airLine.toLowerCase());
+console.log(airLine.toUpperCase());
+
+const passenger = "rEzA";
+const passenerLower = passenger.toLocaleLowerCase();
+const passengercorrect =
+  passenerLower[0].toUpperCase() + passenerLower.slice(1);
+console.log(passengercorrect);
+
+// email check
+
+const email = "reza@gamil.com";
+const loginEmail = "    Reza@Gmail.COM  ";
+
+const normalizedEmail = email.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(normalizedEmail === email);
+
+// replacing
+
+const priceGB = "299,87$";
+const priceUs = priceGB.replace(",", ".");
+console.log(priceUs);
+
+const name1 = "reza amin amin";
+console.log(name1.replace("amin", "rezaei"));
+
+console.log(name1.replaceAll("amin", "rezaei"));
+
+// booleans
+
+const plane1 = "A320ne";
+console.log(plane1.includes("A320"));
+
+console.log(plane1.startsWith("A"));
+console.log(plane1.endsWith("w"));
+
+//practice
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes("knife") || baggage.includes("gun")) {
+    console.log("you are terrorist");
   } else {
-    console.log("you got lucky");
+    console.log("welcome aboard");
   }
 };
 
-checkMiddleSeat("22E");
-checkMiddleSeat("2C");
-checkMiddleSeat("32B");
+checkBaggage("Knife , laptop");
+checkBaggage("gun , snacks");
+checkBaggage("benana");
