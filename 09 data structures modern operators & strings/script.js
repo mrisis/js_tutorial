@@ -660,19 +660,32 @@ const plane = "A320";
 
 // coding challenge #4 part 09
 
-document.body.append(document.createElement("textarea"));
-document.body.append(document.createElement("button"));
+// document.body.append(document.createElement("textarea"));
+// document.body.append(document.createElement("button"));
 
-document.querySelector("button").addEventListener("click", function () {
-  const text = document.querySelector("textarea").value;
+// document.querySelector("button").addEventListener("click", function () {
+//   const text = document.querySelector("textarea").value;
 
-  const rows = text.split("\n");
-  for (const [i, row] of rows.entries()) {
-    const [first, second] = row.toLowerCase().trim().split("_");
-    const output = `${first}${second.replace(
-      second[0],
-      second[0].toUpperCase()
-    )}`;
-    console.log(`${output.padEnd(20, " ")}${"*".repeat(i + 1)}`);
-  }
-});
+//   const rows = text.split("\n");
+//   for (const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLowerCase().trim().split("_");
+//     const output = `${first}${second.replace(
+//       second[0],
+//       second[0].toUpperCase()
+//     )}`;
+//     console.log(`${output.padEnd(20, " ")}${"*".repeat(i + 1)}`);
+//   }
+// });
+
+// string methods practice
+
+const getCode = (str) => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split("+")) {
+  const [type, from, to, time] = flight.split(";");
+  const output = `${type.startsWith("_Delayed") ? "❤️" : " "}${type.replaceAll(
+    "_",
+    " "
+  )} from ${getCode(from)}  to ${getCode(to)} (${time.replace(":", "h")})`;
+  console.log(output.padStart(44, " "));
+}
