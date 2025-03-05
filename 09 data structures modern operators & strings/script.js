@@ -616,44 +616,63 @@ const plane = "A320";
 // working with string part 3
 
 // split
-console.log("a+very+nice+string".split("+"));
-const [firstName, lastName] = "reza amin".split(" ");
-console.log(firstName, lastName);
+// console.log("a+very+nice+string".split("+"));
+// const [firstName, lastName] = "reza amin".split(" ");
+// console.log(firstName, lastName);
 
-// join
+// // join
 
-const newName = ["mr.", firstName, lastName].join(" ");
-console.log(newName);
+// const newName = ["mr.", firstName, lastName].join(" ");
+// console.log(newName);
 
-const passenger = "reza amin rad";
-const capitalizedName = function (name) {
-  const names = name.split(" ");
-  const nameUpper = [];
-  for (const word of names) {
-    // nameUpper.push(word[0].toUpperCase() + word.slice(1));
-    nameUpper.push(word.replace(word[0], word[0].toUpperCase()));
+// const passenger = "reza amin rad";
+// const capitalizedName = function (name) {
+//   const names = name.split(" ");
+//   const nameUpper = [];
+//   for (const word of names) {
+//     // nameUpper.push(word[0].toUpperCase() + word.slice(1));
+//     nameUpper.push(word.replace(word[0], word[0].toUpperCase()));
+//   }
+//   console.log(nameUpper.join(" "));
+// };
+
+// console.log(capitalizedName(passenger));
+
+// // padding
+
+// const message = " go to gate 23";
+// console.log(message.padStart(25, "#"));
+
+// console.log(message.padEnd(25, "#"));
+
+// const maskCreditCard = function (number) {
+//   const str = number + "";
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, "*");
+// };
+
+// console.log(maskCreditCard(52412369526));
+
+// // repeat
+
+// const msg = " bad weather\n";
+// console.log(msg.repeat(5));
+
+// coding challenge #4 part 09
+
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+
+  const rows = text.split("\n");
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split("_");
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20, " ")}${"*".repeat(i + 1)}`);
   }
-  console.log(nameUpper.join(" "));
-};
-
-console.log(capitalizedName(passenger));
-
-// padding
-
-const message = " go to gate 23";
-console.log(message.padStart(25, "#"));
-
-console.log(message.padEnd(25, "#"));
-
-const maskCreditCard = function (number) {
-  const str = number + "";
-  const last = str.slice(-4);
-  return last.padStart(str.length, "*");
-};
-
-console.log(maskCreditCard(52412369526));
-
-// repeat
-
-const msg = " bad weather\n";
-console.log(msg.repeat(5));
+});
