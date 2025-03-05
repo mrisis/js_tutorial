@@ -562,53 +562,98 @@ const plane = "A320";
 
 // working with string part 2
 
-console.log(airLine.toLowerCase());
-console.log(airLine.toUpperCase());
+// console.log(airLine.toLowerCase());
+// console.log(airLine.toUpperCase());
 
-const passenger = "rEzA";
-const passenerLower = passenger.toLocaleLowerCase();
-const passengercorrect =
-  passenerLower[0].toUpperCase() + passenerLower.slice(1);
-console.log(passengercorrect);
+// const passenger = "rEzA";
+// const passenerLower = passenger.toLocaleLowerCase();
+// const passengercorrect =
+//   passenerLower[0].toUpperCase() + passenerLower.slice(1);
+// console.log(passengercorrect);
 
 // email check
 
-const email = "reza@gamil.com";
-const loginEmail = "    Reza@Gmail.COM  ";
+// const email = "reza@gamil.com";
+// const loginEmail = "    Reza@Gmail.COM  ";
 
-const normalizedEmail = email.toLowerCase().trim();
-console.log(normalizedEmail);
-console.log(normalizedEmail === email);
+// const normalizedEmail = email.toLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(normalizedEmail === email);
 
 // replacing
 
-const priceGB = "299,87$";
-const priceUs = priceGB.replace(",", ".");
-console.log(priceUs);
+// const priceGB = "299,87$";
+// const priceUs = priceGB.replace(",", ".");
+// console.log(priceUs);
 
-const name1 = "reza amin amin";
-console.log(name1.replace("amin", "rezaei"));
+// const name1 = "reza amin amin";
+// console.log(name1.replace("amin", "rezaei"));
 
-console.log(name1.replaceAll("amin", "rezaei"));
+// console.log(name1.replaceAll("amin", "rezaei"));
 
 // booleans
 
-const plane1 = "A320ne";
-console.log(plane1.includes("A320"));
+// const plane1 = "A320ne";
+// console.log(plane1.includes("A320"));
 
-console.log(plane1.startsWith("A"));
-console.log(plane1.endsWith("w"));
+// console.log(plane1.startsWith("A"));
+// console.log(plane1.endsWith("w"));
 
 //practice
-const checkBaggage = function (items) {
-  const baggage = items.toLowerCase();
-  if (baggage.includes("knife") || baggage.includes("gun")) {
-    console.log("you are terrorist");
-  } else {
-    console.log("welcome aboard");
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes("knife") || baggage.includes("gun")) {
+//     console.log("you are terrorist");
+//   } else {
+//     console.log("welcome aboard");
+//   }
+// };
+
+// checkBaggage("Knife , laptop");
+// checkBaggage("gun , snacks");
+// checkBaggage("benana");
+
+// working with string part 3
+
+// split
+console.log("a+very+nice+string".split("+"));
+const [firstName, lastName] = "reza amin".split(" ");
+console.log(firstName, lastName);
+
+// join
+
+const newName = ["mr.", firstName, lastName].join(" ");
+console.log(newName);
+
+const passenger = "reza amin rad";
+const capitalizedName = function (name) {
+  const names = name.split(" ");
+  const nameUpper = [];
+  for (const word of names) {
+    // nameUpper.push(word[0].toUpperCase() + word.slice(1));
+    nameUpper.push(word.replace(word[0], word[0].toUpperCase()));
   }
+  console.log(nameUpper.join(" "));
 };
 
-checkBaggage("Knife , laptop");
-checkBaggage("gun , snacks");
-checkBaggage("benana");
+console.log(capitalizedName(passenger));
+
+// padding
+
+const message = " go to gate 23";
+console.log(message.padStart(25, "#"));
+
+console.log(message.padEnd(25, "#"));
+
+const maskCreditCard = function (number) {
+  const str = number + "";
+  const last = str.slice(-4);
+  return last.padStart(str.length, "*");
+};
+
+console.log(maskCreditCard(52412369526));
+
+// repeat
+
+const msg = " bad weather\n";
+console.log(msg.repeat(5));
