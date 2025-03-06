@@ -20,31 +20,52 @@
 
 // how to passing arguments works vlaues vs refrence
 
-const flight = "LH125";
-const reza = {
-  name: "reza amin",
-  passport: 242526,
+// const flight = "LH125";
+// const reza = {
+//   name: "reza amin",
+//   passport: 242526,
+// };
+
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = "LH999";
+//   passenger.name = "MR." + passenger.name;
+
+//   if (passenger.passport === 242526) {
+//     alert("checked In");
+//   } else {
+//     alert("wrong PassPort");
+//   }
+// };
+
+// checkIn(flight, reza);
+// console.log(flight);
+// console.log(reza);
+
+// const newPassport = function (person) {
+//   person.passport = Math.trunc(Math.random() * 10000000);
+// };
+
+// newPassport(reza);
+// checkIn(flight, reza);
+// console.log(reza);
+
+// functions accepting callback functions
+
+const oneWord = function (str) {
+  return str.replaceAll(" ", "").toLowerCase();
 };
 
-const checkIn = function (flightNum, passenger) {
-  flightNum = "LH999";
-  passenger.name = "MR." + passenger.name;
-
-  if (passenger.passport === 242526) {
-    alert("checked In");
-  } else {
-    alert("wrong PassPort");
-  }
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(" ");
+  return [first.toUpperCase(), ...others].join(" ");
 };
 
-checkIn(flight, reza);
-console.log(flight);
-console.log(reza);
+// higher order function (callback functions)
 
-const newPassport = function (person) {
-  person.passport = Math.trunc(Math.random() * 10000000);
+const transformer = function (str, fn) {
+  console.log(`Transformed string:${fn(str)}`);
+  console.log(`Transformed By: ${fn.name}`);
 };
 
-newPassport(reza);
-checkIn(flight, reza);
-console.log(reza);
+transformer("JS is the best", upperFirstWord);
+transformer("JS is the best", oneWord);
