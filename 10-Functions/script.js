@@ -51,21 +51,40 @@
 
 // functions accepting callback functions
 
-const oneWord = function (str) {
-  return str.replaceAll(" ", "").toLowerCase();
-};
+// const oneWord = function (str) {
+//   return str.replaceAll(" ", "").toLowerCase();
+// };
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(" ");
-  return [first.toUpperCase(), ...others].join(" ");
-};
+// const upperFirstWord = function (str) {
+//   const [first, ...others] = str.split(" ");
+//   return [first.toUpperCase(), ...others].join(" ");
+// };
 
 // higher order function (callback functions)
 
-const transformer = function (str, fn) {
-  console.log(`Transformed string:${fn(str)}`);
-  console.log(`Transformed By: ${fn.name}`);
+// const transformer = function (str, fn) {
+//   console.log(`Transformed string:${fn(str)}`);
+//   console.log(`Transformed By: ${fn.name}`);
+// };
+
+// transformer("JS is the best", upperFirstWord);
+// transformer("JS is the best", oneWord);
+
+// functions retrning functions
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
 };
 
-transformer("JS is the best", upperFirstWord);
-transformer("JS is the best", oneWord);
+const greeterHey = greet("Hey");
+greeterHey("reza");
+
+greet("Hello")("reza");
+
+// challenge write function with arrow functions
+
+const greetArr = (greeting) => (name) => console.log(`${greeting} ${name}`);
+
+greetArr("HI")("reza");
