@@ -104,7 +104,7 @@ const landa = {
 };
 
 landa.book(850, "reza amin");
-console.log(landa);
+// console.log(landa);
 
 const eurowings = {
   airline: "eurowings",
@@ -117,13 +117,54 @@ const book = landa.book;
 // call method
 
 book.call(eurowings, 900, "alireza");
-console.log(eurowings);
+// console.log(eurowings);
 
 // apply method
 
 const flightData = [1000, "mamad"];
 book.apply(eurowings, flightData);
-console.log(eurowings);
+// console.log(eurowings);
 
 book.call(eurowings, ...flightData);
+// console.log(eurowings);
+
+// the bind method
+
+const bookEu = book.bind(eurowings);
+bookEu(110, "mohsen");
 console.log(eurowings);
+
+// with event listner
+
+landa.planes = 300;
+landa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector(".buy")
+  .addEventListener("click", landa.buyPlane.bind(landa));
+
+// partial application
+
+const addTax = (rate, value) => value + value * rate;
+
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(1000));
+console.log(addVAT(250));
+
+// write function add tax to return function
+
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const addVAT2 = addTaxRate(0.23);
+console.log(addVAT2(2550));
+console.log(addVAT2(1550));
