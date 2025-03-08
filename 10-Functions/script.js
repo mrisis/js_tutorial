@@ -72,19 +72,58 @@
 
 // functions retrning functions
 
-const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
-  };
-};
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
 
-const greeterHey = greet("Hey");
-greeterHey("reza");
+// const greeterHey = greet("Hey");
+// greeterHey("reza");
 
-greet("Hello")("reza");
+// greet("Hello")("reza");
 
 // challenge write function with arrow functions
 
-const greetArr = (greeting) => (name) => console.log(`${greeting} ${name}`);
+// const greetArr = (greeting) => (name) => console.log(`${greeting} ${name}`);
 
-greetArr("HI")("reza");
+// greetArr("HI")("reza");
+
+// the call ad apply method
+
+const landa = {
+  airline: "Landa Air Lines",
+  iataCode: "LA",
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum} `
+    );
+    this.bookings.push({ flight: `${this.iataCode} ${flightNum}` });
+  },
+};
+
+landa.book(850, "reza amin");
+console.log(landa);
+
+const eurowings = {
+  airline: "eurowings",
+  iataCode: "EU",
+  bookings: [],
+};
+
+const book = landa.book;
+
+// call method
+
+book.call(eurowings, 900, "alireza");
+console.log(eurowings);
+
+// apply method
+
+const flightData = [1000, "mamad"];
+book.apply(eurowings, flightData);
+console.log(eurowings);
+
+book.call(eurowings, ...flightData);
+console.log(eurowings);
