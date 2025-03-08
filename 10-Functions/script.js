@@ -91,80 +91,116 @@
 
 // the call ad apply method
 
-const landa = {
-  airline: "Landa Air Lines",
-  iataCode: "LA",
-  bookings: [],
-  book(flightNum, name) {
-    console.log(
-      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum} `
+// const landa = {
+//   airline: "Landa Air Lines",
+//   iataCode: "LA",
+//   bookings: [],
+//   book(flightNum, name) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum} `
+//     );
+//     this.bookings.push({ flight: `${this.iataCode} ${flightNum}` });
+//   },
+// };
+
+// landa.book(850, "reza amin");
+// // console.log(landa);
+
+// const eurowings = {
+//   airline: "eurowings",
+//   iataCode: "EU",
+//   bookings: [],
+// };
+
+// const book = landa.book;
+
+// // call method
+
+// book.call(eurowings, 900, "alireza");
+// // console.log(eurowings);
+
+// // apply method
+
+// const flightData = [1000, "mamad"];
+// book.apply(eurowings, flightData);
+// // console.log(eurowings);
+
+// book.call(eurowings, ...flightData);
+// // console.log(eurowings);
+
+// // the bind method
+
+// const bookEu = book.bind(eurowings);
+// bookEu(110, "mohsen");
+// console.log(eurowings);
+
+// // with event listner
+
+// landa.planes = 300;
+// landa.buyPlane = function () {
+//   console.log(this);
+//   this.planes++;
+//   console.log(this.planes);
+// };
+
+// document
+//   .querySelector(".buy")
+//   .addEventListener("click", landa.buyPlane.bind(landa));
+
+// // partial application
+
+// const addTax = (rate, value) => value + value * rate;
+
+// console.log(addTax(0.1, 200));
+
+// const addVAT = addTax.bind(null, 0.23);
+// console.log(addVAT(1000));
+// console.log(addVAT(250));
+
+// // write function add tax to return function
+
+// const addTaxRate = function (rate) {
+//   return function (value) {
+//     return value + value * rate;
+//   };
+// };
+
+// const addVAT2 = addTaxRate(0.23);
+// console.log(addVAT2(2550));
+// console.log(addVAT2(1550));
+
+const poll = {
+  question: "whate your favorite programming language?",
+  options: ['0":js', "1:python", "2:rust"],
+  answers: new Array(4).fill(0),
+
+  //1.
+  registerNewAnswer() {
+    const answer = Number(
+      prompt(
+        `${this.question} \n ${this.options.join("\n")} \n(write option number)`
+      )
     );
-    this.bookings.push({ flight: `${this.iataCode} ${flightNum}` });
+    typeof answer === "number" &&
+      answer < this.options.length &&
+      this.answers[answer]++;
+    this.displayResult();
+    this.displayResult("string");
+  },
+  displayResult(type = "array") {
+    if (type === "array") {
+      console.log(this.answers);
+    } else if ((type = "string")) {
+      console.log(`poll results ${this.answers.join(",")}`);
+    }
   },
 };
 
-landa.book(850, "reza amin");
-// console.log(landa);
-
-const eurowings = {
-  airline: "eurowings",
-  iataCode: "EU",
-  bookings: [],
-};
-
-const book = landa.book;
-
-// call method
-
-book.call(eurowings, 900, "alireza");
-// console.log(eurowings);
-
-// apply method
-
-const flightData = [1000, "mamad"];
-book.apply(eurowings, flightData);
-// console.log(eurowings);
-
-book.call(eurowings, ...flightData);
-// console.log(eurowings);
-
-// the bind method
-
-const bookEu = book.bind(eurowings);
-bookEu(110, "mohsen");
-console.log(eurowings);
-
-// with event listner
-
-landa.planes = 300;
-landa.buyPlane = function () {
-  console.log(this);
-  this.planes++;
-  console.log(this.planes);
-};
-
 document
-  .querySelector(".buy")
-  .addEventListener("click", landa.buyPlane.bind(landa));
+  .querySelector(".poll")
+  .addEventListener("click", poll.registerNewAnswer.bind(poll));
 
-// partial application
+// bounus
 
-const addTax = (rate, value) => value + value * rate;
-
-console.log(addTax(0.1, 200));
-
-const addVAT = addTax.bind(null, 0.23);
-console.log(addVAT(1000));
-console.log(addVAT(250));
-
-// write function add tax to return function
-
-const addTaxRate = function (rate) {
-  return function (value) {
-    return value + value * rate;
-  };
-};
-
-const addVAT2 = addTaxRate(0.23);
-console.log(addVAT2(2550));
-console.log(addVAT2(1550));
+poll.registerNewAnswer({ answers: [5, 2, 3] });
+console.log(poll);
