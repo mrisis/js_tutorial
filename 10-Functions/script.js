@@ -222,18 +222,57 @@
 
 // closures
 
-const secureBooking = function () {
-  let passengerCount = 0;
+// const secureBooking = function () {
+//   let passengerCount = 0;
 
-  return function () {
-    passengerCount++;
-    console.log(`${passengerCount} passengers`);
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
+
+// const booker = secureBooking();
+// booker();
+// booker();
+// booker();
+
+// console.dir(booker);
+
+// more closures examples
+
+// example 1
+
+let f;
+
+const g = function () {
+  const a = 22;
+  f = function () {
+    console.log(a * 2);
   };
 };
 
-const booker = secureBooking();
-booker();
-booker();
-booker();
+const h = function () {
+  const b = 888;
+  f = function () {
+    console.log(b * 2);
+  };
+};
 
-console.dir(booker);
+g();
+f();
+h();
+f();
+console.dir(f);
+
+// example 2
+
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`we are now boarding ${n} passengers`);
+  }, wait * 1000);
+  console.log(`will start boarding in ${wait} seconds`);
+};
+
+boardPassengers(180, 5);
