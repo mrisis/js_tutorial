@@ -242,37 +242,47 @@
 
 // example 1
 
-let f;
+// let f;
 
-const g = function () {
-  const a = 22;
-  f = function () {
-    console.log(a * 2);
-  };
-};
+// const g = function () {
+//   const a = 22;
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
 
-const h = function () {
-  const b = 888;
-  f = function () {
-    console.log(b * 2);
-  };
-};
+// const h = function () {
+//   const b = 888;
+//   f = function () {
+//     console.log(b * 2);
+//   };
+// };
 
-g();
-f();
-h();
-f();
-console.dir(f);
+// g();
+// f();
+// h();
+// f();
+// console.dir(f);
 
-// example 2
+// // example 2
 
-const boardPassengers = function (n, wait) {
-  const perGroup = n / 3;
+// const boardPassengers = function (n, wait) {
+//   const perGroup = n / 3;
 
-  setTimeout(function () {
-    console.log(`we are now boarding ${n} passengers`);
-  }, wait * 1000);
-  console.log(`will start boarding in ${wait} seconds`);
-};
+//   setTimeout(function () {
+//     console.log(`we are now boarding ${n} passengers`);
+//   }, wait * 1000);
+//   console.log(`will start boarding in ${wait} seconds`);
+// };
 
-boardPassengers(180, 5);
+// boardPassengers(180, 5);
+
+// coding challenge #2 part 10
+
+(function () {
+  const header = document.querySelector("h1");
+  header.style.color = "red";
+  document.querySelector("body").addEventListener("click", function () {
+    header.style.color = "blue";
+  });
+})();
