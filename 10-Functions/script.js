@@ -207,15 +207,33 @@
 
 // Iife
 
-const runOnce = function () {
-  console.log("run one time for ever");
+// const runOnce = function () {
+//   console.log("run one time for ever");
+// };
+
+// runOnce();
+
+// // Iife
+// (function () {
+//   console.log("run one time !!!");
+// })();
+
+// (() => console.log("run one time !@!@!"))();
+
+// closures
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
 };
 
-runOnce();
+const booker = secureBooking();
+booker();
+booker();
+booker();
 
-// Iife
-(function () {
-  console.log("run one time !!!");
-})();
-
-(() => console.log("run one time !@!@!"))();
+console.dir(booker);
