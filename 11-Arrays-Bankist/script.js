@@ -107,14 +107,35 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // the new at method
 
-const arr = [23, 11, 64];
+// const arr = [23, 11, 64];
 
-console.log(arr[0]);
-console.log(arr.at(0));
+// console.log(arr[0]);
+// console.log(arr.at(0));
 
-// getting last value in array
+// // getting last value in array
 
-console.log(arr[arr.length - 1]);
-console.log(arr.at(-1));
+// console.log(arr[arr.length - 1]);
+// console.log(arr.at(-1));
 
-console.log("reza".at(0));
+// console.log("reza".at(0));
+
+// looping arrays foreach
+
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`you deposited ${movement}`);
+  } else {
+    console.log(`you withdrew ${Math.abs(movement)}`);
+  }
+}
+
+// forEach
+
+console.log("-----FOREACH-----");
+movements.forEach(function (movement, index, array) {
+  if (movement > 0) {
+    console.log(`MoveMent ${index + 1} : you deposited ${movement}`);
+  } else {
+    console.log(`MoveMent ${index + 1} :  you withdrew ${Math.abs(movement)}`);
+  }
+});
