@@ -169,38 +169,53 @@
 // console.log(addVAT2(2550));
 // console.log(addVAT2(1550));
 
-const poll = {
-  question: "whate your favorite programming language?",
-  options: ['0":js', "1:python", "2:rust"],
-  answers: new Array(4).fill(0),
+// const poll = {
+//   question: "whate your favorite programming language?",
+//   options: ['0":js', "1:python", "2:rust"],
+//   answers: new Array(4).fill(0),
 
-  //1.
-  registerNewAnswer() {
-    const answer = Number(
-      prompt(
-        `${this.question} \n ${this.options.join("\n")} \n(write option number)`
-      )
-    );
-    typeof answer === "number" &&
-      answer < this.options.length &&
-      this.answers[answer]++;
-    this.displayResult();
-    this.displayResult("string");
-  },
-  displayResult(type = "array") {
-    if (type === "array") {
-      console.log(this.answers);
-    } else if ((type = "string")) {
-      console.log(`poll results ${this.answers.join(",")}`);
-    }
-  },
+//   //1.
+//   registerNewAnswer() {
+//     const answer = Number(
+//       prompt(
+//         `${this.question} \n ${this.options.join("\n")} \n(write option number)`
+//       )
+//     );
+//     typeof answer === "number" &&
+//       answer < this.options.length &&
+//       this.answers[answer]++;
+//     this.displayResult();
+//     this.displayResult("string");
+//   },
+//   displayResult(type = "array") {
+//     if (type === "array") {
+//       console.log(this.answers);
+//     } else if ((type = "string")) {
+//       console.log(`poll results ${this.answers.join(",")}`);
+//     }
+//   },
+// };
+
+// document
+//   .querySelector(".poll")
+//   .addEventListener("click", poll.registerNewAnswer.bind(poll));
+
+// // bounus
+
+// poll.registerNewAnswer({ answers: [5, 2, 3] });
+// console.log(poll);
+
+// Iife
+
+const runOnce = function () {
+  console.log("run one time for ever");
 };
 
-document
-  .querySelector(".poll")
-  .addEventListener("click", poll.registerNewAnswer.bind(poll));
+runOnce();
 
-// bounus
+// Iife
+(function () {
+  console.log("run one time !!!");
+})();
 
-poll.registerNewAnswer({ answers: [5, 2, 3] });
-console.log(poll);
+(() => console.log("run one time !@!@!"))();
