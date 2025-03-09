@@ -77,30 +77,44 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // simple array methods
 
-const arr = ["a", "b", "c", "d", "e"];
+// const arr = ["a", "b", "c", "d", "e"];
 
-// slice
-console.log(arr.slice(2, 4));
-console.log(arr.slice(-2));
-console.log(arr.slice());
+// // slice
+// console.log(arr.slice(2, 4));
+// console.log(arr.slice(-2));
+// console.log(arr.slice());
 
-// splice
-// console.log(arr.splice(2));
-// console.log(arr);
+// // splice
+// // console.log(arr.splice(2));
+// // console.log(arr);
 
-// reverse
+// // reverse
 
-const arr2 = ["j", "i", "h", "g", "f"];
+// const arr2 = ["j", "i", "h", "g", "f"];
 
-console.log(arr2.reverse());
-console.log(arr2);
+// console.log(arr2.reverse());
+// console.log(arr2);
 
-// concat
+// // concat
 
-const newArr = arr.concat(arr2);
-console.log(newArr);
-console.log([...arr, ...arr2]);
+// const newArr = arr.concat(arr2);
+// console.log(newArr);
+// console.log([...arr, ...arr2]);
 
-// join
-console.log(arr.join("_"));
-console.log(arr2.join(" !_! "));
+// // join
+// console.log(arr.join("_"));
+// console.log(arr2.join(" !_! "));
+
+// the new at method
+
+const arr = [23, 11, 64];
+
+console.log(arr[0]);
+console.log(arr.at(0));
+
+// getting last value in array
+
+console.log(arr[arr.length - 1]);
+console.log(arr.at(-1));
+
+console.log("reza".at(0));
