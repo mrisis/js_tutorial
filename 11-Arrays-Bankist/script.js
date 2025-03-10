@@ -191,20 +191,44 @@ displayMovements(account1.movements);
 
 // coding challenge #1 part 11
 
-const checkDogs = function (dogsJulia, dogsKate) {
-  const dogsJuliaCorrect = dogsJulia.slice();
-  dogsJuliaCorrect.splice(0, 1);
-  dogsJuliaCorrect.splice(-2);
-  const dogs = dogsJuliaCorrect.concat(dogsKate);
-  dogs.forEach(function (dog, index) {
-    if (dog >= 3) {
-      console.log(
-        `dog number ${index + 1} ia an adult , and is ${dog} years old`
-      );
-    } else {
-      console.log(` dog number ${index + 1} is still puppy!!!`);
-    }
-  });
-};
+// const checkDogs = function (dogsJulia, dogsKate) {
+//   const dogsJuliaCorrect = dogsJulia.slice();
+//   dogsJuliaCorrect.splice(0, 1);
+//   dogsJuliaCorrect.splice(-2);
+//   const dogs = dogsJuliaCorrect.concat(dogsKate);
+//   dogs.forEach(function (dog, index) {
+//     if (dog >= 3) {
+//       console.log(
+//         `dog number ${index + 1} ia an adult , and is ${dog} years old`
+//       );
+//     } else {
+//       console.log(` dog number ${index + 1} is still puppy!!!`);
+//     }
+//   });
+// };
 
-checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+// checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+// the map method
+
+const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+
+// console.log(movementsUSD);
+
+//
+
+const movementsUSD = movements.map((mov) => mov * eurToUsd);
+console.log(movementsUSD);
+
+const movementsDescription = movements.map(
+  (mov, i, arr) =>
+    `movement ${i + 1} : you ${mov > 0 ? "deposit" : "withdrew"} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(movementsDescription);
