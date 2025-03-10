@@ -221,14 +221,29 @@ const eurToUsd = 1.1;
 
 //
 
-const movementsUSD = movements.map((mov) => mov * eurToUsd);
-console.log(movementsUSD);
+// const movementsUSD = movements.map((mov) => mov * eurToUsd);
+// console.log(movementsUSD);
 
-const movementsDescription = movements.map(
-  (mov, i, arr) =>
-    `movement ${i + 1} : you ${mov > 0 ? "deposit" : "withdrew"} ${Math.abs(
-      mov
-    )}`
-);
+// const movementsDescription = movements.map(
+//   (mov, i, arr) =>
+//     `movement ${i + 1} : you ${mov > 0 ? "deposit" : "withdrew"} ${Math.abs(
+//       mov
+//     )}`
+// );
 
-console.log(movementsDescription);
+// console.log(movementsDescription);
+
+// coputing usernames
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((name) => name[0])
+      .join("");
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
