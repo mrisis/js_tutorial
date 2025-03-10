@@ -211,7 +211,7 @@ displayMovements(account1.movements);
 
 // the map method
 
-const eurToUsd = 1.1;
+// const eurToUsd = 1.1;
 
 // const movementsUSD = movements.map(function (mov) {
 //   return mov * eurToUsd;
@@ -247,3 +247,14 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts);
 console.log(accounts);
+
+// the filter method
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+
+console.log(deposits);
+
+const withdrawals = movements.filter((mov) => mov < 0);
+console.log(withdrawals);
