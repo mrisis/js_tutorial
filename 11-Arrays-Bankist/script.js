@@ -61,6 +61,50 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
+// creating dom elements
+
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = "";
+
+  movements.forEach(function (movement, index) {
+    const type = movement > 0 ? "deposit" : "withdrawal";
+
+    const html = `
+    <div class="movements__row">
+          <div class="movements__type movements__type--${type}">${
+      index + 1
+    } ${type}</div>
+          <div class="movements__value">${movement}€</div>
+        </div>
+    
+    `;
+    containerMovements.insertAdjacentHTML("afterbegin", html);
+  });
+};
+
+displayMovements(account1.movements);
+
+// coputing usernames
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((name) => name[0])
+      .join("");
+  });
+};
+
+createUsernames(accounts);
+
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcDisplayBalance(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -166,29 +210,6 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // bankist project
 
-// creating dom elements
-
-const displayMovements = function (movements) {
-  containerMovements.innerHTML = "";
-
-  movements.forEach(function (movement, index) {
-    const type = movement > 0 ? "deposit" : "withdrawal";
-
-    const html = `
-    <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${
-      index + 1
-    } ${type}</div>
-          <div class="movements__value">${movement}€</div>
-        </div>
-    
-    `;
-    containerMovements.insertAdjacentHTML("afterbegin", html);
-  });
-};
-
-displayMovements(account1.movements);
-
 // coding challenge #1 part 11
 
 // const checkDogs = function (dogsJulia, dogsKate) {
@@ -233,28 +254,33 @@ displayMovements(account1.movements);
 
 // console.log(movementsDescription);
 
-// coputing usernames
-
-const createUsernames = function (accs) {
-  accs.forEach(function (acc) {
-    acc.username = acc.owner
-      .toLowerCase()
-      .split(" ")
-      .map((name) => name[0])
-      .join("");
-  });
-};
-
-createUsernames(accounts);
-console.log(accounts);
+// console.log(accounts);
 
 // the filter method
 
-const deposits = movements.filter(function (mov) {
-  return mov > 0;
-});
+// const deposits = movements.filter(function (mov) {
+//   return mov > 0;
+// });
 
-console.log(deposits);
+// console.log(deposits);
 
-const withdrawals = movements.filter((mov) => mov < 0);
-console.log(withdrawals);
+// const withdrawals = movements.filter((mov) => mov < 0);
+// console.log(withdrawals);
+
+// the reduce method
+
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   return acc + cur;
+// }, 0);
+
+// console.log(balance);
+
+// const balance = movements.reduce((acc, mov) => acc + mov, 0);
+// console.log(balance);
+
+const maxValue = movements.reduce(
+  (acc, mov) => (acc > mov ? acc : mov),
+  movements[0]
+);
+
+console.log(maxValue);
