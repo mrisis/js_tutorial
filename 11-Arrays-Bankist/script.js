@@ -324,11 +324,22 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // the majic of chaininh methods
 
-const eurToUsd = 1.1;
+// const eurToUsd = 1.1;
 
-const totalDepositsUSD = movements
-  .filter((mov) => mov > 0)
-  .map((mov) => mov * eurToUsd)
-  .reduce((acc, mov) => acc + mov, 0);
+// const totalDepositsUSD = movements
+//   .filter((mov) => mov > 0)
+//   .map((mov) => mov * eurToUsd)
+//   .reduce((acc, mov) => acc + mov, 0);
 
-console.log(totalDepositsUSD);
+// console.log(totalDepositsUSD);
+
+// coding challenge #3 part 11
+
+const calcAverageHumanAge = (ages) =>
+  ages
+    .map((age) => (age <= 2 ? age * 2 : 16 + age * 4))
+    .filter((age) => age >= 18)
+    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+
+const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+console.log(avg1);
