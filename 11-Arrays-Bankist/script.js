@@ -82,8 +82,6 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements);
-
 // coputing usernames
 
 const createUsernames = function (accs) {
@@ -103,30 +101,56 @@ const calcDisplayBalance = function (movements) {
   labelBalance.textContent = `${balance} EUR`;
 };
 
-calcDisplayBalance(account1.movements);
-
-const calcDisplaySummery = function (movements) {
-  const incoms = movements
+const calcDisplaySummery = function (account) {
+  const incoms = account.movements
     .filter((mov) => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
 
   labelSumIn.textContent = `${incoms} €`;
 
-  const out = movements
+  const out = account.movements
     .filter((mov) => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
 
   labelSumOut.textContent = `${Math.abs(out)} €`;
 
-  const interset = movements
+  const interset = account.movements
     .filter((mov) => mov > 0)
-    .map((mov) => (mov * 1.2) / 100)
+    .map((mov) => (mov * account.interestRate) / 100)
     .reduce((acc, mov) => acc + mov, 0);
 
   labelSumInterest.textContent = `${interset} €`;
 };
 
-calcDisplaySummery(account1.movements);
+let currentAccount;
+btnLogin.addEventListener("click", function (e) {
+  e.preventDefault();
+  currentAccount = accounts.find(
+    (acc) => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+  if (currentAccount.pin === Number(inputLoginPin.value)) {
+    // change welcome message after login
+    labelWelcome.textContent = `Welcome Back, ${
+      currentAccount.owner.split(" ")[0]
+    }`;
+
+    containerApp.style.opacity = 100;
+
+    // after login remove value of input username & pin
+    inputLoginUsername.value = inputLoginPin.value = "";
+    inputLoginPin.blur();
+
+    // display movements current user
+    displayMovements(currentAccount.movements);
+
+    // display balnce current user
+    calcDisplayBalance(currentAccount.movements);
+
+    // display summary current user
+    calcDisplaySummery(currentAccount);
+  }
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -346,8 +370,8 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // the find method
 
-const firstWithDrawal = movements.find((mov) => mov < 0);
-console.log(firstWithDrawal);
+// const firstWithDrawal = movements.find((mov) => mov < 0);
+// console.log(firstWithDrawal);
 
-const account = accounts.find((acc) => (acc.owner = "Jessica Davis"));
-console.log(account);
+// const account = accounts.find((acc) => (acc.owner = "Jessica Davis"));
+// console.log(account);
