@@ -278,9 +278,23 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // const balance = movements.reduce((acc, mov) => acc + mov, 0);
 // console.log(balance);
 
-const maxValue = movements.reduce(
-  (acc, mov) => (acc > mov ? acc : mov),
-  movements[0]
-);
+// const maxValue = movements.reduce(
+//   (acc, mov) => (acc > mov ? acc : mov),
+//   movements[0]
+// );
 
-console.log(maxValue);
+// console.log(maxValue);
+
+// coding challenge #2 part 11
+
+const calcAverageHumanAge = function (ages) {
+  const humanAges = ages.map((age) => (age <= 2 ? age * 2 : 16 + age * 4));
+
+  const adults = humanAges.filter((age) => age >= 18);
+
+  const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+  return average;
+};
+
+const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+console.log(avg1);
