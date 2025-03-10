@@ -335,11 +335,19 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // coding challenge #3 part 11
 
-const calcAverageHumanAge = (ages) =>
-  ages
-    .map((age) => (age <= 2 ? age * 2 : 16 + age * 4))
-    .filter((age) => age >= 18)
-    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+// const calcAverageHumanAge = (ages) =>
+//   ages
+//     .map((age) => (age <= 2 ? age * 2 : 16 + age * 4))
+//     .filter((age) => age >= 18)
+//     .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
 
-const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
-console.log(avg1);
+// const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+// console.log(avg1);
+
+// the find method
+
+const firstWithDrawal = movements.find((mov) => mov < 0);
+console.log(firstWithDrawal);
+
+const account = accounts.find((acc) => (acc.owner = "Jessica Davis"));
+console.log(account);
