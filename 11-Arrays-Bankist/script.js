@@ -105,6 +105,29 @@ const calcDisplayBalance = function (movements) {
 
 calcDisplayBalance(account1.movements);
 
+const calcDisplaySummery = function (movements) {
+  const incoms = movements
+    .filter((mov) => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumIn.textContent = `${incoms} €`;
+
+  const out = movements
+    .filter((mov) => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumOut.textContent = `${Math.abs(out)} €`;
+
+  const interset = movements
+    .filter((mov) => mov > 0)
+    .map((mov) => (mov * 1.2) / 100)
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumInterest.textContent = `${interset} €`;
+};
+
+calcDisplaySummery(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -287,14 +310,25 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // coding challenge #2 part 11
 
-const calcAverageHumanAge = function (ages) {
-  const humanAges = ages.map((age) => (age <= 2 ? age * 2 : 16 + age * 4));
+// const calcAverageHumanAge = function (ages) {
+//   const humanAges = ages.map((age) => (age <= 2 ? age * 2 : 16 + age * 4));
 
-  const adults = humanAges.filter((age) => age >= 18);
+//   const adults = humanAges.filter((age) => age >= 18);
 
-  const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
-  return average;
-};
+//   const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+//   return average;
+// };
 
-const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
-console.log(avg1);
+// const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+// console.log(avg1);
+
+// the majic of chaininh methods
+
+const eurToUsd = 1.1;
+
+const totalDepositsUSD = movements
+  .filter((mov) => mov > 0)
+  .map((mov) => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD);
