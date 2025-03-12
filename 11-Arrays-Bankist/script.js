@@ -440,17 +440,39 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // some and every
 
-console.log(movements);
-console.log(movements.includes(-130));
+// console.log(movements);
+// console.log(movements.includes(-130));
 
-// some method
+// // some method
 
-const anyDeposits = movements.some((mov) => mov > 0);
-console.log(anyDeposits);
+// const anyDeposits = movements.some((mov) => mov > 0);
+// console.log(anyDeposits);
 
-// every method
+// // every method
 
-console.log(movements.every((mov) => mov > 0));
+// console.log(movements.every((mov) => mov > 0));
 
-const deposit = (mov) => mov > 0;
-console.log(movements.every(deposit));
+// const deposit = (mov) => mov > 0;
+// console.log(movements.every(deposit));
+
+// flat and flatmap methods
+
+const arr = [[1, 2, 3], [4, 5], 6, 7, 8];
+console.log(arr.flat());
+
+const arrDeep = [[1, [2, 3]], [4, 5, [33, 44, [23, 21]]], 6, 7, 8];
+console.log(arrDeep.flat(3));
+
+const overalBalance = accounts
+  .map((acc) => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overalBalance);
+
+//flatMap method
+const overalBalance2 = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overalBalance2);
