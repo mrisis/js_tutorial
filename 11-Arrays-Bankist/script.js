@@ -489,15 +489,42 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // sorting arrays
 
-const owners = ["reza", "ali", "zahra", "mamad"];
-console.log(owners.sort());
-console.log(owners);
+// const owners = ["reza", "ali", "zahra", "mamad"];
+// console.log(owners.sort());
+// console.log(owners);
 
-console.log(movements);
-console.log(movements.sort());
+// console.log(movements);
+// console.log(movements.sort());
 
-//asd
-console.log(movements.sort((a, b) => a - b));
+// //asd
+// console.log(movements.sort((a, b) => a - b));
 
-//des
-console.log(movements.sort((a, b) => b - a));
+// //des
+// console.log(movements.sort((a, b) => b - a));
+
+// more ways of creating and filling arrays
+
+const x = new Array(7);
+console.log(x);
+
+// x.fill(1);
+
+x.fill(1, 3, 5);
+console.log(x);
+
+// Array.From
+
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+
+console.log(z);
+
+labelBalance.addEventListener("click", function () {
+  const movemventsUI = Array.from(
+    document.querySelectorAll(".movements__value"),
+    (el) => el.textContent.replace("€", "")
+  );
+  console.log(movemventsUI);
+});
