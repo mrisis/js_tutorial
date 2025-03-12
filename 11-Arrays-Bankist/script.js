@@ -96,9 +96,9 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts);
 
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance} EUR`;
 };
 
 const calcDisplaySummery = function (account) {
@@ -122,6 +122,17 @@ const calcDisplaySummery = function (account) {
   labelSumInterest.textContent = `${interset} €`;
 };
 
+const updateUI = function (acc) {
+  // display movements current user
+  displayMovements(acc.movements);
+
+  // display balnce current user
+  calcDisplayBalance(acc);
+
+  // display summary current user
+  calcDisplaySummery(acc);
+};
+
 let currentAccount;
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault();
@@ -141,17 +152,33 @@ btnLogin.addEventListener("click", function (e) {
     inputLoginUsername.value = inputLoginPin.value = "";
     inputLoginPin.blur();
 
-    // display movements current user
-    displayMovements(currentAccount.movements);
-
-    // display balnce current user
-    calcDisplayBalance(currentAccount.movements);
-
-    // display summary current user
-    calcDisplaySummery(currentAccount);
+    updateUI(currentAccount);
   }
 });
 
+// implementing transfers
+
+btnTransfer.addEventListener("click", function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    (acc) => acc.username === inputTransferTo.value
+  );
+
+  inputTransferTo.value = inputTransferAmount.value = "";
+
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    receiverAcc?.username !== currentAccount.username &&
+    currentAccount.balance >= amount
+  ) {
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+
+    updateUI(currentAccount);
+  }
+});
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
