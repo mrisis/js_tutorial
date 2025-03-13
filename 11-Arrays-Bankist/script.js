@@ -504,27 +504,86 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // more ways of creating and filling arrays
 
-const x = new Array(7);
-console.log(x);
+// const x = new Array(7);
+// console.log(x);
 
-// x.fill(1);
+// // x.fill(1);
 
-x.fill(1, 3, 5);
-console.log(x);
+// x.fill(1, 3, 5);
+// console.log(x);
 
-// Array.From
+// // Array.From
 
-const y = Array.from({ length: 7 }, () => 1);
-console.log(y);
+// const y = Array.from({ length: 7 }, () => 1);
+// console.log(y);
 
-const z = Array.from({ length: 7 }, (_, i) => i + 1);
+// const z = Array.from({ length: 7 }, (_, i) => i + 1);
 
-console.log(z);
+// console.log(z);
 
-labelBalance.addEventListener("click", function () {
-  const movemventsUI = Array.from(
-    document.querySelectorAll(".movements__value"),
-    (el) => el.textContent.replace("€", "")
+// labelBalance.addEventListener("click", function () {
+//   const movemventsUI = Array.from(
+//     document.querySelectorAll(".movements__value"),
+//     (el) => el.textContent.replace("€", "")
+//   );
+//   console.log(movemventsUI);
+// });
+
+// array methods practice
+
+const bankDespositSum = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(bankDespositSum);
+
+//
+const numDeposits1000 = accounts
+  .flatMap((acc) => acc.movements)
+  .filter((mov) => mov >= 1000).length;
+
+const numDeposits1000Two = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+
+console.log(numDeposits1000Two);
+
+console.log(numDeposits1000);
+
+//prefixed ++ operators
+
+let a = 10;
+// console.log(a++);
+console.log(++a);
+
+//
+const sums = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      sums[cur > 0 ? "deposits" : "withdrawals"] += cur;
+      return sums;
+    },
+    {
+      deposits: 0,
+      withdrawals: 0,
+    }
   );
-  console.log(movemventsUI);
-});
+
+console.log(sums);
+
+//
+const converTitleCase = function (title) {
+  const exceptions = ["a", "an", "and", "the", "with"];
+
+  const titleCase = title
+    .toLowerCase()
+    .split(" ")
+    .map((word) =>
+      exceptions.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join(" ");
+  return titleCase;
+};
+
+console.log(converTitleCase("this is a reza amin and this prson"));
