@@ -531,59 +531,122 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // array methods practice
 
-const bankDespositSum = accounts
-  .flatMap((acc) => acc.movements)
-  .reduce((sum, cur) => sum + cur, 0);
+// const bankDespositSum = accounts
+//   .flatMap((acc) => acc.movements)
+//   .reduce((sum, cur) => sum + cur, 0);
 
-console.log(bankDespositSum);
+// console.log(bankDespositSum);
 
-//
-const numDeposits1000 = accounts
-  .flatMap((acc) => acc.movements)
-  .filter((mov) => mov >= 1000).length;
+// //
+// const numDeposits1000 = accounts
+//   .flatMap((acc) => acc.movements)
+//   .filter((mov) => mov >= 1000).length;
 
-const numDeposits1000Two = accounts
-  .flatMap((acc) => acc.movements)
-  .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+// const numDeposits1000Two = accounts
+//   .flatMap((acc) => acc.movements)
+//   .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
 
-console.log(numDeposits1000Two);
+// console.log(numDeposits1000Two);
 
-console.log(numDeposits1000);
+// console.log(numDeposits1000);
 
-//prefixed ++ operators
+// //prefixed ++ operators
 
-let a = 10;
-// console.log(a++);
-console.log(++a);
+// let a = 10;
+// // console.log(a++);
+// console.log(++a);
 
-//
-const sums = accounts
-  .flatMap((acc) => acc.movements)
-  .reduce(
-    (sums, cur) => {
-      sums[cur > 0 ? "deposits" : "withdrawals"] += cur;
-      return sums;
-    },
-    {
-      deposits: 0,
-      withdrawals: 0,
-    }
-  );
+// //
+// const sums = accounts
+//   .flatMap((acc) => acc.movements)
+//   .reduce(
+//     (sums, cur) => {
+//       sums[cur > 0 ? "deposits" : "withdrawals"] += cur;
+//       return sums;
+//     },
+//     {
+//       deposits: 0,
+//       withdrawals: 0,
+//     }
+//   );
 
-console.log(sums);
+// console.log(sums);
 
-//
-const converTitleCase = function (title) {
-  const exceptions = ["a", "an", "and", "the", "with"];
+// //
+// const converTitleCase = function (title) {
+//   const exceptions = ["a", "an", "and", "the", "with"];
 
-  const titleCase = title
-    .toLowerCase()
-    .split(" ")
-    .map((word) =>
-      exceptions.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
-    )
-    .join(" ");
-  return titleCase;
-};
+//   const titleCase = title
+//     .toLowerCase()
+//     .split(" ")
+//     .map((word) =>
+//       exceptions.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
+//     )
+//     .join(" ");
+//   return titleCase;
+// };
 
-console.log(converTitleCase("this is a reza amin and this prson"));
+// console.log(converTitleCase("this is a reza amin and this prson"));
+
+// coding challenge #4 part 11
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ["Alice", "Bob"] },
+  { weight: 8, curFood: 200, owners: ["Matilda"] },
+  { weight: 13, curFood: 275, owners: ["Sarah", "John", "Leo"] },
+  { weight: 18, curFood: 244, owners: ["Joe"] },
+  { weight: 32, curFood: 340, owners: ["Michael"] },
+];
+
+//1.
+dogs.forEach((dog) => Math.trunc((dog.recFood = dog.weight ** 0.75 * 28)));
+console.log(dogs);
+
+//2.
+const dogSarah = dogs.find((dog) => dog.owners.includes("Sarah"));
+
+console.log(
+  `Sarah 's dog is eating ${
+    dogSarah.curFood > dogSarah.recFood ? "much" : "little"
+  }`
+);
+
+//3.
+
+const ownersEatTooMuch = dogs
+  .filter((dog) => dog.curFood > dog.recFood)
+  .flatMap((dog) => dog.owners);
+
+console.log(ownersEatTooMuch);
+
+const ownersEatTooLittle = dogs
+  .filter((dog) => dog.curFood < dog.recFood)
+  .flatMap((dog) => dog.owners);
+
+console.log(ownersEatTooLittle);
+
+//4.
+
+console.log(`${ownersEatTooMuch.join(" and ")}'s dogs eat too much`);
+
+console.log(`${ownersEatTooLittle.join(" and ")}'s dogs eat too little`);
+
+//5.
+
+console.log(dogs.some((dog) => dog.curFood === dog.recFood));
+
+//6.
+
+const checkEatingOkay = (dog) =>
+  dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1;
+
+console.log(dogs.some(checkEatingOkay));
+
+//7.
+console.log(dogs.filter(checkEatingOkay));
+
+//8.
+
+const dogsCopySorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+
+console.log(dogsCopySorted);
