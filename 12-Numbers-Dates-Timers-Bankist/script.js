@@ -337,22 +337,55 @@ btnSort.addEventListener('click', function (e) {
 
 // working with big int
 
-console.log(2 ** 53 - 1);
-console.log(Number.MAX_SAFE_INTEGER);
+// console.log(2 ** 53 - 1);
+// console.log(Number.MAX_SAFE_INTEGER);
 
-console.log(544548645614231545415645);
+// console.log(544548645614231545415645);
 
-console.log(1534845463351231n);
-console.log(BigInt(564564313551));
+// console.log(1534845463351231n);
+// console.log(BigInt(564564313551));
 
-const num1 = 4545645641541351854n;
-const num2 = 255;
+// const num1 = 4545645641541351854n;
+// const num2 = 255;
 
-console.log(num1 === num2);
-// console.log(num1 + num2); => error
+// console.log(num1 === num2);
+// // console.log(num1 + num2); => error
 
-console.log(num1 / 255n);
+// console.log(num1 / 255n);
 
-console.log(typeof num1);
+// console.log(typeof num1);
 
-console.log(10000n + 10000n);
+// console.log(10000n + 10000n);
+
+// creating dates
+
+// create date
+// const now = new Date();
+// console.log(now);
+
+// console.log(new Date('Fri Mar 14 2024 14:01:11'));
+
+// console.log(new Date(2021, 10, 18, 20, 41, 30));
+
+// console.log(new Date(0));
+
+// working with dates
+
+const future = new Date(2037, 10, 16, 20, 41);
+
+console.log(future);
+
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+
+console.log(future.toISOString());
+
+future.setFullYear(2038);
+future.setMonth(11);
+
+console.log(future.toISOString());
