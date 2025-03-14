@@ -324,13 +324,35 @@ btnSort.addEventListener('click', function (e) {
 
 // numeric separators
 
-const diameter = 248_460_000_000;
+// const diameter = 248_460_000_000;
 
-console.log(diameter);
+// console.log(diameter);
 
-const priceCents = 15_99;
-console.log(priceCents);
+// const priceCents = 15_99;
+// console.log(priceCents);
 
-console.log(Number('230_000'));
+// console.log(Number('230_000'));
 
-console.log(Number.parseInt('230_000'));
+// console.log(Number.parseInt('230_000'));
+
+// working with big int
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+console.log(544548645614231545415645);
+
+console.log(1534845463351231n);
+console.log(BigInt(564564313551));
+
+const num1 = 4545645641541351854n;
+const num2 = 255;
+
+console.log(num1 === num2);
+// console.log(num1 + num2); => error
+
+console.log(num1 / 255n);
+
+console.log(typeof num1);
+
+console.log(10000n + 10000n);
