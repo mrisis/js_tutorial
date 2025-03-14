@@ -304,20 +304,33 @@ btnSort.addEventListener('click', function (e) {
 
 // the remiander operator
 
-console.log(5 % 2);
+// console.log(5 % 2);
 
-console.log(8 % 3);
+// console.log(8 % 3);
 
-console.log(6 % 2);
-console.log(7 % 2);
+// console.log(6 % 2);
+// console.log(7 % 2);
 
-const isEven = n => n % 2 === 0;
+// const isEven = n => n % 2 === 0;
 
-console.log(isEven(24));
-console.log(isEven(23));
+// console.log(isEven(24));
+// console.log(isEven(23));
 
-labelBalance.addEventListener('click', function () {
-  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
-    if (i % 2 === 0) row.style.backgroundColor = 'orange';
-  });
-});
+// labelBalance.addEventListener('click', function () {
+//   [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+//     if (i % 2 === 0) row.style.backgroundColor = 'orange';
+//   });
+// });
+
+// numeric separators
+
+const diameter = 248_460_000_000;
+
+console.log(diameter);
+
+const priceCents = 15_99;
+console.log(priceCents);
+
+console.log(Number('230_000'));
+
+console.log(Number.parseInt('230_000'));
