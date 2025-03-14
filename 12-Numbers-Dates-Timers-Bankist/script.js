@@ -271,33 +271,53 @@ btnSort.addEventListener('click', function (e) {
 
 // math and rounding
 
-console.log(Math.sqrt(25));
+// console.log(Math.sqrt(25));
 
-console.log(Math.max(5, 10, 20, 3, 40));
+// console.log(Math.max(5, 10, 20, 3, 40));
 
-console.log(Math.min(5, 1, 25, 2, 1, 3));
+// console.log(Math.min(5, 1, 25, 2, 1, 3));
 
-console.log(Math.PI);
+// console.log(Math.PI);
 
-console.log(Math.trunc(Math.random() * 6) + 1);
+// console.log(Math.trunc(Math.random() * 6) + 1);
 
-const randomInt = (min, max) =>
-  Math.trunc(Math.random() * (max - min) + 1) + min;
+// const randomInt = (min, max) =>
+//   Math.trunc(Math.random() * (max - min) + 1) + min;
 
-console.log(randomInt(10, 30));
+// console.log(randomInt(10, 30));
 
-// rounding integers
+// // rounding integers
 
-console.log(Math.trunc(29.3));
+// console.log(Math.trunc(29.3));
 
-console.log(Math.ceil(29.3));
+// console.log(Math.ceil(29.3));
 
-console.log(Math.floor(29.9));
+// console.log(Math.floor(29.9));
 
-console.log(Math.round(24.3));
+// console.log(Math.round(24.3));
 
-// rounding decimals
+// // rounding decimals
 
-console.log((12.7).toFixed(3));
+// console.log((12.7).toFixed(3));
 
-console.log(+(13.201201125).toFixed(3));
+// console.log(+(13.201201125).toFixed(3));
+
+// the remiander operator
+
+console.log(5 % 2);
+
+console.log(8 % 3);
+
+console.log(6 % 2);
+console.log(7 % 2);
+
+const isEven = n => n % 2 === 0;
+
+console.log(isEven(24));
+console.log(isEven(23));
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    if (i % 2 === 0) row.style.backgroundColor = 'orange';
+  });
+});
