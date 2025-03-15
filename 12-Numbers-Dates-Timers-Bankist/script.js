@@ -90,12 +90,13 @@ const formatMovementDate = function (date, locale) {
   if (daysPassed === 0) return 'Today';
   if (daysPassed === 1) return 'Yesterday';
   if (daysPassed <= 7) return `${daysPassed} days ago`;
-  else {
-    const day = `${date.getDate()}`.padStart(2, 0);
-    const month = `${date.getMonth() + 1}`.padStart(2, 0);
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
+  // else {
+  //   const day = `${date.getDate()}`.padStart(2, 0);
+  //   const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  //   const year = date.getFullYear();
+  //   return `${day}/${month}/${year}`;
+  // }
+  return Intl.DateTimeFormat(locale).format(date);
 };
 
 const displayMovements = function (acc, sort = false) {
@@ -192,14 +193,26 @@ btnLogin.addEventListener('click', function (e) {
       currentAccount.owner.split(' ')[0]
     }`;
 
-    const now = new Date();
-    const day = `${now.getDate()}`.padStart(2, 0);
-    const month = `${now.getMonth()}`.padStart(2.0);
-    const year = `${now.getFullYear()}`;
-    const hour = now.getHours();
-    const min = `${now.getSeconds()}`.padStart(2, 0);
+    // const now = new Date();
+    // const day = `${now.getDate()}`.padStart(2, 0);
+    // const month = `${now.getMonth()}`.padStart(2.0);
+    // const year = `${now.getFullYear()}`;
+    // const hour = now.getHours();
+    // const min = `${now.getSeconds()}`.padStart(2, 0);
 
-    labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
+    const now = new Date();
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric',
+    };
+
+    labelDate.textContent = new Intl.DateTimeFormat(
+      currentAccount.locale,
+      options
+    ).format(now);
     containerApp.style.opacity = 100;
 
     // Clear input fields
@@ -428,11 +441,16 @@ btnSort.addEventListener('click', function (e) {
 
 // oprations with dates
 
-const future = new Date(2037, 10, 19, 15, 23);
-console.log(+future);
+// const future = new Date(2037, 10, 19, 15, 23);
+// console.log(+future);
 
-const calcDaysPassed = (date1, date2) =>
-  Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+// const calcDaysPassed = (date1, date2) =>
+//   Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
 
-const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
-console.log(days1);
+// const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
+// console.log(days1);
+
+// internationalizing dates(intl)
+const now1 = new Date();
+
+console.log(Intl.DateTimeFormat('fa-IR').format(now1));
