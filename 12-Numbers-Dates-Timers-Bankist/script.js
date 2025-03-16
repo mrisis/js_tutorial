@@ -266,13 +266,15 @@ btnLoan.addEventListener('click', function (e) {
   const amount = +inputLoanAmount.value;
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-    // Add movement
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      // Add movement
+      currentAccount.movements.push(amount);
 
-    currentAccount.movementsDates.push(new Date().toISOString());
+      currentAccount.movementsDates.push(new Date().toISOString());
 
-    // Update UI
-    updateUI(currentAccount);
+      // Update UI
+      updateUI(currentAccount);
+    }, 3000);
   }
   inputLoanAmount.value = '';
 });
@@ -467,10 +469,32 @@ btnSort.addEventListener('click', function (e) {
 
 // intl numbers
 
-const num = 3885214.23;
-const options = {
-  style: 'currency',
-  currency: 'IRR',
-};
+// const num = 3885214.23;
+// const options = {
+//   style: 'currency',
+//   currency: 'IRR',
+// };
 
-console.log(new Intl.NumberFormat('fa-IR', options).format(num));
+// console.log(new Intl.NumberFormat('fa-IR', options).format(num));
+
+// setTimeout & setInterval
+
+// set time out
+
+const ings = ['pizza', 'tomatto'];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`${ing1},${ing2}`),
+  5000,
+  ...ings
+);
+
+if (ings.includes('pizza')) {
+  clearTimeout(pizzaTimer);
+}
+
+// set interval
+
+// setInterval(function () {
+//   const now = new Date();
+//   console.log(`${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`);
+// }, 1000);
