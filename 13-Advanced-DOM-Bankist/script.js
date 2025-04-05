@@ -32,36 +32,36 @@ document.addEventListener('keydown', function (e) {
 
 // selecting elements
 
-console.log(document.documentElement);
+// console.log(document.documentElement);
 
-console.log(document.head);
+// console.log(document.head);
 
-console.log(document.body);
+// console.log(document.body);
 
-const header = document.querySelector('.header');
-console.log(header);
+// const header = document.querySelector('.header');
+// console.log(header);
 
-const allSections = document.querySelectorAll('.section');
+// const allSections = document.querySelectorAll('.section');
 
-console.log(allSections);
+// console.log(allSections);
 
-console.log(document.getElementById('section--1'));
+// console.log(document.getElementById('section--1'));
 
-const allButtons = document.getElementsByTagName('button');
-console.log(allButtons);
+// const allButtons = document.getElementsByTagName('button');
+// console.log(allButtons);
 
-console.log(document.getElementsByClassName('btn'));
+// console.log(document.getElementsByClassName('btn'));
 
-// creating and inserting elements
+// // creating and inserting elements
 
-const message = document.createElement('div');
+// const message = document.createElement('div');
 
-message.classList.add('cookie-message');
-message.innerHTML =
-  "reza amin welcome back <button class = 'btn btn--close--cookie'>Got it !</button>";
+// message.classList.add('cookie-message');
+// message.innerHTML =
+//   "reza amin welcome back <button class = 'btn btn--close--cookie'>Got it !</button>";
 
-header.prepend(message);
-header.append(message);
+// header.prepend(message);
+// header.append(message);
 
 // header.append(message.cloneNode(true));
 
@@ -70,54 +70,79 @@ header.append(message);
 
 //delete elements
 
-document
-  .querySelector('.btn--close--cookie')
-  .addEventListener('click', function () {
-    message.remove();
-  });
+// document
+//   .querySelector('.btn--close--cookie')
+//   .addEventListener('click', function () {
+//     message.remove();
+//   });
 
-// styles
+// // styles
 
-message.style.backgroundColor = '#37383d';
-message.style.width = '120%';
+// message.style.backgroundColor = '#37383d';
+// message.style.width = '120%';
 
-console.log(message.style.color);
-console.log(message.style.backgroundColor);
+// console.log(message.style.color);
+// console.log(message.style.backgroundColor);
 
-console.log(getComputedStyle(message));
-console.log(getComputedStyle(message).color);
+// console.log(getComputedStyle(message));
+// console.log(getComputedStyle(message).color);
 
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+// message.style.height =
+//   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 
-console.log(message.style.height);
+// console.log(message.style.height);
 
-// attributes
+// // attributes
 
-const logo = document.querySelector('.nav__logo');
+// const logo = document.querySelector('.nav__logo');
 
-console.log(logo.alt);
-console.log(logo.src);
-console.log(logo.getAttribute('src'));
+// console.log(logo.alt);
+// console.log(logo.src);
+// console.log(logo.getAttribute('src'));
 
-logo.alt = 'reza amin is here!!!';
-console.log(logo.alt);
+// logo.alt = 'reza amin is here!!!';
+// console.log(logo.alt);
 
-logo.setAttribute('company', 'reza company');
+// logo.setAttribute('company', 'reza company');
 
-console.log(logo.getAttribute('company'));
+// console.log(logo.getAttribute('company'));
 
-//data attributes
+// //data attributes
 
-console.log(logo.dataset.versionNumber);
+// console.log(logo.dataset.versionNumber);
 
-// classes
+// // classes
 
-logo.classList.add('c', 'd');
-logo.classList.remove('c', 'd');
-logo.classList.toggle('c');
-logo.classList.contains('c');
+// logo.classList.add('c', 'd');
+// logo.classList.remove('c', 'd');
+// logo.classList.toggle('c');
+// logo.classList.contains('c');
 
-// don't use it
+// // don't use it
 
-// logo.className = 'reza';
+// // logo.className = 'reza';
+
+//
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.getElementById('section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  //scrolling
+
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
