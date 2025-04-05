@@ -75,3 +75,49 @@ document
   .addEventListener('click', function () {
     message.remove();
   });
+
+// styles
+
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.color);
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message));
+console.log(getComputedStyle(message).color);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+console.log(message.style.height);
+
+// attributes
+
+const logo = document.querySelector('.nav__logo');
+
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+
+logo.alt = 'reza amin is here!!!';
+console.log(logo.alt);
+
+logo.setAttribute('company', 'reza company');
+
+console.log(logo.getAttribute('company'));
+
+//data attributes
+
+console.log(logo.dataset.versionNumber);
+
+// classes
+
+logo.classList.add('c', 'd');
+logo.classList.remove('c', 'd');
+logo.classList.toggle('c');
+logo.classList.contains('c');
+
+// don't use it
+
+// logo.className = 'reza';
